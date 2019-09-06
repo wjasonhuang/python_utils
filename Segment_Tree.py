@@ -105,9 +105,6 @@ class SegTreeLazy():
 
 '''
 lazy propagation using tree instead of list (example Leetcode 699_Tree)
-to set range to a value instead of add a value: (example Leetcode 307_Lazy)
-    1) add a timestamp to store latest timestamp of ret udpate
-    2) only propagate lazy to children if parent's timestamp is later than children's
 '''
 
 def calc(a, b):
