@@ -36,7 +36,7 @@ class SegTree():
 
 '''
 interval update and query with lazy propagation O(log N) (example Leetcode 699_List)
-key fact: modification on internval [l, r) only affects
+key facts: modification on internval [l, r) only affects
     1) parents of border leaves l+n and r+n-1
     2) values that compose the interval itself
 '''
