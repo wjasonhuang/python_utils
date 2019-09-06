@@ -18,7 +18,7 @@ class Trie:
             if c not in cur.children: cur.children[c] = Node()
             cur = cur.children[c]
         cur.value = True
-                    
+
     def search(self, word: str) -> bool:
         cur = self.trie
         for c in word:
