@@ -12,6 +12,9 @@ General purpose functions based on heaps
 heapq.merge(*iterables, key=None, reverse=False)
 heapq.nlargest(n, iterable, key=None)
 heapq.nsmallest(n, iterable, key=None)
+
+item = tuple: compare by 1st element and use rest of elements as tiebreaker
+if rest of elements don't support < operator, add an extra distinct element as tiebreaker
 '''
 
 import heapq
