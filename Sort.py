@@ -1,3 +1,14 @@
+'----------sort with lambda and cmp----------'
+nums = [(8, 9), (4, 13), (4, 15), (8, 2), (13, 4), (1, 17), (18, 18), (4, 12)]
+print(sorted(nums, key=lambda item: item[1]-item[0]))
+
+from functools import cmp_to_key
+def sort_by_diff(nums):
+    def cmp(a, b): return (a[1]-a[0]) - (b[1]-b[0])
+    return sorted(nums, key=cmp_to_key(cmp))
+print(sort_by_diff(nums))
+
+'----------quick sort----------'
 import random
 def quick_sort(nums):
     def sort(l, r):
@@ -14,6 +25,7 @@ def quick_sort(nums):
             sort(k+1, r)
     sort(0, len(nums)-1)
 
+'----------merge sort----------'
 def merge_sort(nums):
     ret = [0] * len(nums)
     def sort(l, r):
