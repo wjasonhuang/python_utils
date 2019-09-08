@@ -42,6 +42,6 @@ print(dt1, '|', timedelta, '|', dt1+timedelta, '\n')
 
 '----------strftime----------'
 print(dt1)
-print(dt1.strftime('%a %A'))                    #weekday as name
-print(dt1.strftime('%b %B'))                    #month as name
-print(dt1.strftime('%Y %m %d %H %M %S %f'))     #YYYYMMDDHHMMSSFFFFFF as number
+print(dt1.strftime('%a %A'))                    # weekday as name
+print(dt1.strftime('%b %B'))                    # month as name
+print(dt1.strftime('%Y %m %d %H %M %S %f'))     # YYYYMMDDHHMMSSFFFFFF as number
