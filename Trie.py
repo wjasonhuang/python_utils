@@ -25,10 +25,3 @@ class Trie:
             if c not in cur.children: return False
             cur = cur.children[c]
         return cur.value
-
-    def startsWith(self, prefix: str) -> bool:
-        cur = self.trie
-        for c in prefix:
-            if c not in cur.children: return False
-            cur = cur.children[c]
-        return True
