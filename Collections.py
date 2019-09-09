@@ -15,6 +15,8 @@ UserString
 deque: list-like container with fast appends and pops on either end
 
 deque(iterable, maxlen = None)
+when a bounded deque is full, new items added will cause the same number of items to be popped off the other end
+
 append(x)
 appendleft(x)
 extend(iterable)        append elements from iterable
@@ -44,7 +46,9 @@ d.rotate(4)
 print(d)
 d = deque('hello', maxlen=5)
 print(d)
-d.appendleft(2)
+d.appendleft(999)
+print(d)
+d.extend('123')
 print(d)
 print(list(d))
 
