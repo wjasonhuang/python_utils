@@ -1,8 +1,15 @@
 '''
 https://docs.python.org/3/library/collections.html
+deque
+Counter
+namedtuple()
+ChainMap
+OrderedDict
+defaultdict
+UserDict
+UserList
+UserString
 '''
-
-import collections
 
 '''
 deque: list-like container with fast appends and pops on either end
@@ -25,14 +32,59 @@ rotate(n)               rotate the deque n steps to the right, if n is negative,
 maxlen                  maximum size of a deque or None if unbounded, can't change after initialization
 '''
 
-d = collections.deque('hello')
+from collections import deque
+
+print('----------deque----------')
+d = deque('hello')
 d.append('2w')
 d.extendleft('2w')
 print(d)
 print(d.popleft(), d)
 d.rotate(4)
 print(d)
-d = collections.deque('hello', maxlen=5)
+d = deque('hello', maxlen=5)
 print(d)
 d.appendleft(2)
 print(d)
+print(list(d))
+
+'''
+Counter: dict subclass for counting hashable objects
+
+Counter([iterable-or-mapping])
+elements()
+most_common([n])                    returns all elements in the counter if n is omitted
+subtract([iterable-or-mapping])
+update([iterable-or-mapping])       opposite of subtract
++, -, &, |
+'''
+
+from collections import Counter
+
+print('----------Counter----------')
+a = Counter()                           # a new, empty counter
+b1 = Counter('gallahad')                # a new counter from an iterable
+b2 = Counter(['g','a','l','l','a','h','a','d', 'aa'])
+c = Counter({'red': 4, 'blue': 2})      # a new counter from a mapping
+d = Counter(cats=4, dogs=8)             # a new counter from keyword args
+print(a, b1, b2, c)
+print(d, d['birds'])
+d['cats'] = 0                           # counter entry with a zero count
+print(d)
+del d['cats']                           # del actually removes the entry
+print(d)
+
+c = Counter(a=4, b=2, c=0, d=-2)
+print(list(c.elements()))               # will ignore elements with count < 1
+print(Counter('abracadabra').most_common(3))
+
+c = Counter(a=4, b=2, c=0, d=-2)
+c.subtract(Counter(a=1, b=2, c=3, d=4))
+print(c)
+c.subtract('aade')
+print(c)
+
+c = Counter(a=4, b=2, c=0, d=-2)
+d = Counter(['a', 'b', 'b', 'c'])
+print(c+d, c-d)                         # will ignore elements with count < 1
+print(c&d, c|d)                         # will ignore elements with count < 1
