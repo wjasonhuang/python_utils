@@ -1,0 +1,33 @@
+class Solution:
+    def criticalConnections(self, n: int, connections):
+        g = dict()
+        for i in range(n): g[i] = []
+        for e in connections:
+            g[e[0]].append(e[1])
+            g[e[1]].append(e[0])
+        
+        ret = []
+        self.time = 0
+        disc = [0] * n
+        low = [0] * n
+        visited = [False] * n
+        parent = [-1] * n
+        
+        def dfs(i):
+            visited[i] = True
+            disc[i] = low[i] = self.time
+            self.time += 1
+            for v in g[i]:
+                if not visited[v]:
+                    parent[v] = i
+                    dfs(v)
+                    low[i] = min(low[i], low[v])
+                    if low[v] > disc[i]: ret.append([i, v])
+                elif v != parent[i]:
+                    low[i] = min(low[i], low[v])
+        
+        dfs(0)
+        
+        return ret
+
+        
