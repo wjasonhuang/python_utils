@@ -5,7 +5,8 @@ space Complexity 2N, build tree O(N)
 single element update and interval query O(log N)
 '''
 
-#Leetcode 307
+# Leetcode 307
+
 class SegTree():
     def __init__(self, nums):
         self.n = len(nums)
