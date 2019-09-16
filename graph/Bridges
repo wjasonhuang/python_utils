@@ -18,7 +18,6 @@ class Solution:
         for e in edges:
             g[e[0]].append(e[1])
             g[e[1]].append(e[0])
-
         ret = []
         disc = [0] * n
         low = [0] * n
