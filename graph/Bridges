@@ -9,7 +9,7 @@ if there does not exist any other alternative to reach u or an ancestor of u fro
 https://www.geeksforgeeks.org/bridge-in-a-graph/
 '''
 
-#Leetcode 1192
+# Leetcode 1192
 
 class Solution:
     def criticalConnections(self, n, edges):
