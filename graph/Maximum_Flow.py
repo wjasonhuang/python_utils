@@ -4,7 +4,7 @@ https://en.wikipedia.org/wiki/Maximum_flow_problem
 https://www.geeksforgeeks.org/ford-fulkerson-algorithm-for-maximum-flow-problem/
 
 Applicaiton:
-    Bipartite Matching
+    Bipartite Matching O(V^3)
     Minimum Cut of A Network Flow - nodes reachable from souce in max flow residual graph vs the rest
 '''
 
