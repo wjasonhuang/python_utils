@@ -11,8 +11,8 @@ dict
 list.append(x) = a[len(a):] = [x]
 list.extend(iterable) = a[len(a):] = iterable
 list.insert(i, x)
-list.remove(x)
-list.pop([i])
+list.remove(x)                      remove first item with value x
+list.pop([i])                       i default to -1, pop last item O(1), pop first item O(N)
 list.clear() = del a[:]
 list.index(x[, start[, end]])
 list.count(x)
