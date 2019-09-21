@@ -20,7 +20,7 @@ class LRUCache:
     def __init__(self, capacity):
         self.cap = capacity
         self.head = None
-        self.map = dict()
+        self.key_loc = dict()
 
     def remove(self, node):
         p, n = node.prev, node.next
@@ -32,26 +32,27 @@ class LRUCache:
         self.head = node
 
     def get(self, key):
-        if key not in self.map: return -1
-        node = self.map[key]
+        if key not in self.key_loc: return -1
+        node = self.key_loc[key]
         if node != self.head:
             self.remove(node)
             self.add(node)
         return node.value
 
     def put(self, key, value):
-        if key in self.map:
+        if key in self.key_loc:
             self.get(key)
             self.head.value = value
             return
         
-        if len(self.map) >= self.cap:
-            del self.map[self.head.prev.key]
+        if len(self.key_loc) >= self.cap:
+            del self.key_loc[self.head.prev.key]
             self.remove(self.head.prev)
 
         node = Node(key, value)
-        self.map[key] = node
-        if len(self.map) == 1: # LRU cache queue saved as a loop to avoid None in prev and next
+        self.key_loc[key] = node
+        if len(self.key_loc) == 1:
+            # LRU cache queue saved as a loop to avoid None in prev and next
             self.head = node.prev = node.next = node
         else:
-            self.add(self.map[key])
+            self.add(self.key_loc[key])
