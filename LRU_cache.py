@@ -22,7 +22,7 @@ class LRUCache:
         self.head = None
         self.key_loc = dict()
 
-    def remove(self, node):
+    def remove(self, node): # no change if number of element = 1
         p, n = node.prev, node.next
         p.next, n.prev = n, p
         
