@@ -10,8 +10,8 @@ https://www.geeksforgeeks.org/lru-cache-implementation/
 
 class Node:
     def __init__(self, key, value):
-        self.prev = None    # prev is more recent node
-        self.next = None    # next is less recent node
+        self.prev = None        # prev is more recent node
+        self.next = None        # next is less recent node
         self.key = key
         self.value = value
 
@@ -22,11 +22,11 @@ class LRUCache:
         self.head = None
         self.key_loc = dict()
 
-    def remove(self, node): # no change if number of elements = 1
+    def remove(self, node):     # number of elements has to be > 1
         p, n = node.prev, node.next
         p.next, n.prev = n, p
         
-    def add(self, node): # add node to head of queue
+    def add(self, node):        # add node to head of queue
         node.prev, self.head.prev.next = self.head.prev, node
         node.next, self.head.prev = self.head, node
         self.head = node
@@ -40,6 +40,8 @@ class LRUCache:
         return node.value
 
     def put(self, key, value):
+        if self.cap == 0: return
+        
         if key in self.key_loc:
             self.get(key)
             self.head.value = value
@@ -47,7 +49,10 @@ class LRUCache:
         
         if len(self.key_loc) >= self.cap:
             del self.key_loc[self.head.prev.key]
-            self.remove(self.head.prev)
+            if len(self.key_loc) > 0:
+                self.remove(self.head.prev)
+            else:
+                self.head = None
 
         node = Node(key, value)
         self.key_loc[key] = node
