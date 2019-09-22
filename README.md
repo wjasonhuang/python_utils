@@ -1,6 +1,6 @@
-/psl      python standard library
-
-/graph    graph theory
+/data_structure       data structures
+/graph                graph theory
+/psl                  python standard library
 
 https://www.py4e.com/materials
 
