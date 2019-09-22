@@ -2,7 +2,7 @@
 LRU cache (Least recently used)
 https://en.wikipedia.org/wiki/Cache_replacement_policies#Least_recently_used_(LRU)
 
-O(1) read and write using queue (using a double linked list) and hash
+O(1) read and write using double linked list and hash
 https://www.geeksforgeeks.org/lru-cache-implementation/
 '''
 
