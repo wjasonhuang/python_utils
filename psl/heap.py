@@ -18,6 +18,7 @@ if rest of elements don't support < operator, add an extra distinct element as t
 '''
 
 import heapq
+
 help(heapq)
 '---------- Initialization ----------'
 l = []
