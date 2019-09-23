@@ -31,6 +31,7 @@ def bisect_right(a, x, lo=0, hi=None):
 '''
 
 import bisect
+
 help(bisect)
 a = [0,1,1,3,4]
 print(len(a))
