@@ -61,6 +61,7 @@ statistics.variance(data, xbar=None)    sample variance (/(n-1))
 '''
 
 import math
+
 print('----------math----------')
 print(math.copysign(1, -1))
 print(math.fmod(-5, 1.1))
@@ -76,14 +77,18 @@ print(math.sqrt(2), math.sqrt(3), math.sqrt(5))
 print(math.sin(math.pi/3), math.cos(math.pi/3), math.tan(math.pi/3))
 print(math.asin(0.5), math.acos(0.5))
 
+
 import random
+
 print('----------random----------')
 a = [i for i in range(10)]
 random.shuffle(a)
 print(a)
 print(random.sample([1,1,1,2,2,2,3,3,3,0], 5))
 
+
 import statistics
+
 print('----------statistics----------')
 a = [1, 2, 2, 3]
 print(statistics.mean(a), statistics.pstdev(a), statistics.stdev(a))
