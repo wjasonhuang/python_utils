@@ -2,9 +2,9 @@
 https://docs.python.org/3/library/collections.html
 deque
 Counter
+OrderedDict
 namedtuple()
 ChainMap
-OrderedDict
 defaultdict
 UserDict
 UserList
@@ -16,7 +16,6 @@ deque: list-like container with fast appends and pops on either end
 
 deque(iterable, maxlen = None)
 when a bounded deque is full, new items added will cause the same number of items to be popped off the other end
-
 append(x)
 appendleft(x)
 extend(iterable)        append elements from iterable
@@ -51,6 +50,7 @@ print(d)
 d.extend('123')
 print(d)
 print(list(d))
+
 
 '''
 Counter: dict subclass for counting hashable objects
@@ -92,3 +92,32 @@ c = Counter(a=4, b=2, c=0, d=-2)
 d = Counter(['a', 'b', 'b', 'c'])
 print(c+d, c-d)                         # will ignore elements with count < 1
 print(c&d, c|d)                         # will ignore elements with count < 1
+
+
+'''
+OrderedDict: dict subclass that has methods specialized for rearranging dictionary order
+
+popitem(last=True)              return and remove a (key, value) pair
+                                LIFO order if last is true or FIFO order if false
+move_to_end(key, last=True)     move an existing key to either end of an ordered dictionary
+reversed()
+equality tests are order-sensitive and are implemented as list(od1.items())==list(od2.items())
+'''
+
+from collections import OrderedDict
+
+print('----------OrderedDict----------')
+od = OrderedDict([('a', 1), ('b', 2), ('c', 3)])
+print(od)
+print(od.popitem(False))
+od['a'] = 4
+print(od)
+od.move_to_end('a', False)
+print(od)
+for key in reversed(od): print(key, end=' ')
+print()
+
+# dictionary supports insertion order now as of Python 3.7
+od = dict([('c', 1), ('b', 2), ('a', 3)])
+print(od)
+print(next(iter(od)))
