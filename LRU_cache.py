@@ -8,6 +8,33 @@ https://www.geeksforgeeks.org/lru-cache-implementation/
 
 # Leetcode 146
 
+class LRUCache:
+    def __init__(self, capacity):
+        self.cap = capacity
+        self.cache = dict()     # dictionary is in insertion order as of Python 3.7
+
+    def get(self, key):
+        if key not in self.cache: return -1
+        value = self.cache[key]
+        del self.cache[key]
+        self.cache[key] = value
+        return value
+
+    def put(self, key, value):
+        if self.cap == 0: return
+        
+        if key in self.cache:
+            del self.cache[key]
+            self.cache[key] = value
+        else:
+            if len(self.cache) >= self.cap:
+                head = next(iter(self.cache))
+                del self.cache[head]
+            self.cache[key] = value
+
+
+# using double linked list
+
 class Node:
     def __init__(self, key, value):
         self.prev = None        # prev is more recent node
@@ -15,7 +42,7 @@ class Node:
         self.key = key
         self.value = value
 
-class LRUCache:
+class LRU_Cache:
 
     def __init__(self, capacity):
         self.cap = capacity
