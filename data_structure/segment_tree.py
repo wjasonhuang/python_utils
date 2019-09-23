@@ -35,6 +35,7 @@ class SegTree():
             j //= 2
         return tot
 
+
 '''
 interval update and query with lazy propagation O(log N) (example Leetcode 699_List)
 key facts: modification on internval [l, r) only affects
@@ -103,6 +104,7 @@ class SegTreeLazy():
             l //= 2
             r //= 2
         return ret
+
 
 '''
 lazy propagation using tree instead of list (example Leetcode 699_Tree)
