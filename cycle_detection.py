@@ -15,12 +15,12 @@ def Floyd(f, x0):
     if cycle exists, once both slow and fast have entered into the loop,
     fast gets closer to slow by 1 at each step and eventually will meet
 
-    assume they first meet at v = u + k + n_slow * lambda = u + k + n_fast * lambda
-    => u + k + n_fast * lambda = 2 * (u + k + n_slow * lamdba)
-    => u + k = lambda * integer (n_fast - 2 * n_slow)
+    assume they first meet at v = mu + k + n_slow * lambda = mu + k + n_fast * lambda
+    => mu + k + n_fast * lambda = 2 * (mu + k + n_slow * lamdba)
+    => mu + k = lambda * integer (n_fast - 2 * n_slow)
     => v = lambda * integer
 
-    if we restart at x0, v and move by 1 each step, we will meet at u as v + u = u
+    if we restart at x0, v and move by 1 each step, we will meet at mu as v + mu = mu
     '''
 
     # find v
