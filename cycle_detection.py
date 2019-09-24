@@ -15,7 +15,7 @@ def Floyd(f, x0):
     if cycle exists, once both slow and fast have entered into the loop,
     fast gets closer to slow by 1 at each step and eventually will meet
 
-    assume they meet at v = u + k + n_slow * lambda = u + k + n_fast * lambda
+    assume they first meet at v = u + k + n_slow * lambda = u + k + n_fast * lambda
     => u + k + n_fast * lambda = 2 * (u + k + n_slow * lamdba)
     => u + k = lambda * integer (n_fast - 2 * n_slow)
     => v = lambda * integer
