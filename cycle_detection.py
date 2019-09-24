@@ -8,7 +8,7 @@ def Floyd(f, x0):
     '''
     f: function, x0: initial value
     find cycle in sequence x0, f(x0), f^2(x0), ..., f^n(x0), ...
-    return mu, lamda where f^u(x0) = f^lamda(f^u(x0))
+    return mu, lamda where f^mu(x0) = f^lamda(f^mu(x0))
 
     f can be .next in case of linked list
 
