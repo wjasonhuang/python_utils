@@ -2,6 +2,7 @@
 https://docs.python.org/3/library/collections.html
 deque
 Counter
+defaultdict
 OrderedDict
 namedtuple()
 ChainMap
@@ -93,6 +94,23 @@ d = Counter(['a', 'b', 'b', 'c'])
 print(c+d, c-d)                         # will ignore elements with count < 1
 print(c&d, c|d)                         # will ignore elements with count < 1
 
+'''
+defaultdict: dict subclass that calls a factory function to supply missing values
+class collections.defaultdict([default_factory[, ...]])
+the first argument provides the initial value for the default_factory attribute defaults to None
+all remaining arguments are passed to the dict constructor
+'''
+
+from collections import defaultdict
+
+print('----------defaultdict----------')
+a = defaultdict()
+b = defaultdict(int)
+c = defaultdict(float)
+d = defaultdict(list)
+e = defaultdict(lambda : 'default')
+print(a)
+print(b[0], c['1'], d[0], e[0])
 
 '''
 OrderedDict: dict subclass that has methods specialized for rearranging dictionary order
