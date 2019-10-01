@@ -1,26 +1,26 @@
-Coding:
+# Interview Tips
 
-1) clarify variable's size and boundary
+## Coding:
 
-2) mention for simplicity, will use simple variable names for now
+1) **clarify variable's size and boundary**
 
-3) ask to optimize time or space
+2) **mention for simplicity, will use simple variable names for now**
 
-4) test edge cases
+3) **ask to optimize time or space**
 
-5) assert input variables
+4) **test edge cases**
 
+5) **assert input variables**
 
-Questions:
+## Google Questions:
 
-How is performance evaluated at Google? What are the qualities of successful engineers?
+* How is performance evaluated at Google? What are the qualities of successful engineers?
 
-Can you talk about learning and development opportunities at Google?
+* Can you talk about learning and development opportunities at Google?
 
-How would you describe the Google's culture?
+* How would you describe the Google's culture?
 
-
-Others:
+## Other Questions:
 
 If you were to hire me, what should I expect in a typical day?
 
