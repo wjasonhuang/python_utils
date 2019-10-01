@@ -2,15 +2,15 @@
 
 ## Coding:
 
-1) **clarify variable's size and boundary**
+1) **Clarify variable's size and boundary**
 
-2) **mention for simplicity, will use simple variable names for now**
+2) **Mention for simplicity, will use simple variable names for now**
 
-3) **ask to optimize time or space**
+3) **Ask to optimize time or space**
 
-4) **test edge cases**
+4) **Test edge cases**
 
-5) **assert input variables**
+5) **Assert input variables**
 
 ## Google Questions:
 
