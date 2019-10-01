@@ -1,0 +1,31 @@
+Coding:
+
+1) clarify variable's size and boundary
+
+2) mention for simplicity, will use simple variable names for now
+
+3) ask to optimize time or space
+
+4) test edge cases
+
+5) assert input variables
+
+
+Questions:
+
+How is performance evaluated at Google? What are the qualities of successful engineers?
+
+Can you talk about learning and development opportunities at Google?
+
+How would you describe the Google's culture?
+
+
+Others:
+
+If you were to hire me, what should I expect in a typical day?
+
+What have past employees done to succeed in this position?
+
+What will be my responsibilities for the next 6-12 months?
+
+What is your software development process?
