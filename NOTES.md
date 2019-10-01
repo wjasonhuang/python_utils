@@ -22,10 +22,10 @@
 
 ## Other Questions:
 
-If you were to hire me, what should I expect in a typical day?
+* If you were to hire me, what should I expect in a typical day?
 
-What have past employees done to succeed in this position?
+* What have past employees done to succeed in this position?
 
-What will be my responsibilities for the next 6-12 months?
+* What will be my responsibilities for the next 6-12 months?
 
-What is your software development process?
+* What is your software development process?
