@@ -32,7 +32,7 @@ math.tan(x)                 tangent of x radians
 math.asin(x)                inverse sine
 math.acos(x)                inverse cosine
 math.atan(x)                inverse tangent
-
+math.atan2(y, x)            return atan(y / x) in radians, between -pi and pi
 
 https://docs.python.org/3/library/random.html
 
