@@ -1,6 +1,6 @@
 '''
 https://en.wikipedia.org/wiki/Segment_tree
-https://codeforces.com/blog/entry/18051
+https://codeforces.com/blog/entry/18051 (zkw Segment Tree)
 space Complexity 2N, build tree O(N)
 single element update and interval query O(log N)
 '''
