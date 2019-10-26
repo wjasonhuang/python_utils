@@ -10,17 +10,19 @@ Applicaiton:
 
 # SPOJ 377
 
+from collections import deque
+
 def FordFulkerson(source, sink, graph, flow):   
     # graph[u]: list of v such that u -> v exists
     # flow[(u, v)]: residual capacity of edge u -> v
     parent, max_flow = [-1] * (len(graph)), 0
 
     def BFS(s, t, parent): # return True if there is path from s to t in residual graph
-        visited, queue = [False] * (len(graph)), []
+        visited, queue = [False] * (len(graph)), deque()
         queue.append(s) 
         visited[s] = True
         while queue:
-            u = queue.pop(0)
+            u = queue.popleft()
             for v in graph[u]:
                 if not visited[v] and flow[(u, v)] > 0:
                     queue.append(v)
