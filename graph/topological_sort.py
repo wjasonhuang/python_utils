@@ -1,6 +1,6 @@
 '''
 Topological Sorting of A Directed Graph
-DFS algorithm O(|V| + |E|)
+DFS algorithm O(V + E)
 https://en.wikipedia.org/wiki/Topological_sorting
 '''
 
