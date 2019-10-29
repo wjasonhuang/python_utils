@@ -1,6 +1,6 @@
 '''
-Union Find Set O(alpha(n)) per operation
-alpha(n) inverse Ackermann function ~ O(1)
+Union Find Set O(alpha(N)) per operation
+alpha(N) inverse Ackermann function ~ O(1)
 https://en.wikipedia.org/wiki/Disjoint-set_data_structure
 '''
 
