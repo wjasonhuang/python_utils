@@ -2,7 +2,7 @@
 An edge in an undirected connected graph is a bridge iff removing it disconnects the graph.
 A bridge is an edge removing which increases number of disconnected components.
 
-O(V+E) to find all bridges
+O(V + E) to find all bridges
 We do DFS traversal of the given graph. In DFS tree an edge (u, v) (u is parent of v in DFS tree) is bridge 
 if there does not exist any other alternative to reach u or an ancestor of u from subtree rooted with v.
 
