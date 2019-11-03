@@ -1,4 +1,3 @@
-# LeetCode 1242
 # """
 # This is HtmlParser's API interface.
 # You should not implement it, or speculate about its implementation
