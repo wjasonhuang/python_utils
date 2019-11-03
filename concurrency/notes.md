@@ -1,4 +1,3 @@
-'''
 Threading vs Multiprocessing
 
 Threading:
@@ -18,4 +17,3 @@ Multiprocessing:
 - One GIL (Global Interpreter Lock) for each process
 - Utilize multiple CPU cores
 - Use for programs that are CPU bound
-'''
