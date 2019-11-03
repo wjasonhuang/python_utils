@@ -10,7 +10,7 @@ from typing import List, Tuple
 
 def topological_sort(graph: List[List[int]]) -> Tuple[bool, List[int]]:
     '''
-        graph: directed graph, graphe[u] = [v where u -> v]
+        graph: directed graph, graph[u] = [v where u -> v]
         visited[u]: 0 not visited, 1 visiting, 2 visited
     '''
 
