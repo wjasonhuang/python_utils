@@ -1,6 +1,6 @@
 # Threading vs Multiprocessing
 
-Threading:
+## Threading:
 - A new thread is spawned within the existing process
 - Starting a thread is faster than starting a process
 - Memory is shared between all threads
@@ -9,7 +9,7 @@ Threading:
 - Interpreter runs the instructions serially due to GIL
 - Use for programs that are IO bound or network bound
 
-Multiprocessing:
+## Multiprocessing:
 - A new process is started independent from the first process
 - Starting a process is slower than starting a thread
 - Memory is not shared between all processes
