@@ -18,8 +18,25 @@
 - Utilize multiple CPU cores
 - Use for programs that are CPU bound
 
+
 # Concurrency 
 The concurrency is designed to above all enable multitasking, yet it could easily bring some bugs into the program if not applied properly. Depending on the consequences, the problems caused by concurrency can be categorized into three types:
 - race conditions: the program ends with an undesired output, resulting from the sequence of execution among the processes. 
 - deadlocks: the concurrent processes wait for some necessary resources from each other. As a result, none of them can make progress. 
 - resource starvation: a process is perpetually denied necessary resources to progress its works.
+
+
+# Lock vs Mutex vs Semaphore
+https://stackoverflow.com/questions/34519/what-is-a-semaphore/40238#40238
+
+## Lock
+- A lock allows only one thread to enter the part that's locked
+- Lock is not shared with any other processes
+
+## Mutex
+- A mutex is the same as a lock but it can be system wide
+- Mutex is shared by multiple processes
+
+## Semaphore
+- A semaphore does the same as a mutex but allows x number of threads to enter
+- Can be used for example to limit the number of cpu, io or ram intensive tasks running at the same time
