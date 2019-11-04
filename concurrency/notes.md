@@ -29,14 +29,14 @@ The concurrency is designed to above all enable multitasking, yet it could easil
 # Lock vs Mutex vs Semaphore
 https://stackoverflow.com/questions/34519/what-is-a-semaphore/40238#40238
 
-## Lock
+## Lock:
 - A lock allows only one thread to enter the part that's locked
 - Lock is not shared with any other processes
 
-## Mutex
+## Mutex:
 - A mutex is the same as a lock but it can be system wide
 - Mutex is shared by multiple processes
 
-## Semaphore
+## Semaphore:
 - A semaphore does the same as a mutex but allows x number of threads to enter
 - Can be used for example to limit the number of cpu, io or ram intensive tasks running at the same time
