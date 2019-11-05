@@ -32,6 +32,7 @@ with concurrent.futures.ThreadPoolExecutor() as executor:
     for f in results: print(f)
 print_time()
 
+#if __name__ == '__main__':
 with concurrent.futures.ProcessPoolExecutor() as executor:
     results = [executor.submit(calc_pool, i, sleep_time[i]) for i in range(n)]
     #for f in concurrent.futures.as_completed(results): print(f.result())
