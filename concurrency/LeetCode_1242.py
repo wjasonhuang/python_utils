@@ -39,3 +39,28 @@ class Solution:
             for t in threads: t.join()
         
         return list(visited)
+
+
+from threading import Lock
+from concurrent.futures import ThreadPoolExecutor
+
+class Solution:
+    def crawl(self, startUrl: str, htmlParser: 'HtmlParser') -> List[str]:
+        
+        def crawler(startUrl):
+            nonlocal lock
+            startHost = startUrl.split('/')[2]
+            urlList = htmlParser.getUrls(startUrl)
+            with lock:
+                for url in urlList:
+                    if url in visited or url.split('/')[2] != startHost: continue
+                    visited.add(url)
+                    newq.append(url)
+        
+        q, visited, lock = [startUrl], set([startUrl]), Lock() 
+        while q:
+            newq = []
+            with ThreadPoolExecutor() as executor:
+                executor.map(crawler, q)
+            q = newq
+        return list(visited)
