@@ -36,7 +36,7 @@ def add_50_lock(total, lock):
 def add_500_multi_processing():
     print('\n----- add one 500 times multiprocessing -----')
     
-    total = Value('i', 0)
+    total = Value('i', 0) # d for double, i for integer
     procs = [Process(target=add_50, args=(total, )) for _ in range(10)]
     for p in procs: p.start()
     for p in procs: p.join()
