@@ -40,3 +40,37 @@ https://stackoverflow.com/questions/34519/what-is-a-semaphore/40238#40238
 ## Semaphore:
 - A semaphore does the same as a mutex but allows x number of threads to enter
 - Can be used for example to limit the number of cpu, io or ram intensive tasks running at the same time
+
+
+# Deadlock vs Livelock vs Starvation
+https://www.geeksforgeeks.org/deadlock-starvation-and-livelock/
+
+## Deadlock:
+A deadlock is a state in which each member of a group of actions, is waiting for some other member to release a lock.
+```
+var p = new object() 
+lock(p):
+    lock(p):
+        // deadlock. Since p is previously locked 
+        // we will never reach here... 
+```
+ 
+## Livelock:
+A livelock on the other hand is almost similar to a deadlock, except that the states of the processes involved in a livelock constantly keep on changing with regard to one another, none progressing. T
+```
+var l1 = .... // lock object like semaphore or mutex etc 
+var l2 = .... // lock object like semaphore or mutex etc 
+    // Thread1       
+    while True:
+        if (!l1.Lock(1000)) continue; 
+        if (!l2.Lock(1000)) continue; 
+        // do some work 
+    }); 
+  
+    // Thread12      
+    while True:
+        if (!l2.Lock(1000)) continue; 
+        if (!l1.Lock(1000)) continue; 
+        // do some work 
+    }); 
+```
