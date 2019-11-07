@@ -1,3 +1,8 @@
+'''
+ThreadPoolExecutor(max_workers=None, thread_name_prefix='', initializer=None, initargs=())
+v3.8: Default value of max_workers is changed to min(32, os.cpu_count() + 4)
+'''
+
 import time, concurrent.futures
 
 def calc_pool(pool_id, sleep_time):
@@ -7,7 +12,7 @@ def calc_pool(pool_id, sleep_time):
 
 n = 4
 sleep_time = [i / 2 for i in reversed(range(n))]
-
+    
 now = time.time()
 with concurrent.futures.ThreadPoolExecutor() as executor:
     results = [executor.submit(calc_pool, i, sleep_time[i]) for i in range(n)]
