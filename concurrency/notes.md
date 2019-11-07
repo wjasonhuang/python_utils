@@ -28,7 +28,7 @@ The concurrency is designed to above all enable multitasking, yet it could easil
 
 
 
-# Lock vs Mutex vs Semaphore
+# Lock vs Mutex vs Semaphore vs Monitor
 https://stackoverflow.com/questions/34519/what-is-a-semaphore/40238#40238
 
 ## Lock:
@@ -43,6 +43,7 @@ https://stackoverflow.com/questions/34519/what-is-a-semaphore/40238#40238
 - A semaphore does the same as a mutex but allows x number of threads to enter
 - Can be used for example to limit the number of cpu, io or ram intensive tasks running at the same time
 
+## Monitor:
 
 
 # Deadlock vs Livelock vs Starvation
@@ -79,8 +80,5 @@ var l2 = .... // lock object like semaphore or mutex etc
     }); 
 ```
 
-## Starvation
-- Starvation is a problem which is closely related to both, Livelock and Deadlock.
-- In a dynamic system, requests for resources keep on happening. Thereby, some policy is needed to make a decision about who gets the resource when.
-- This process, being reasonable, may lead to some processes never getting serviced even though they are not deadlocked.
-- Starvation happens when “greedy” threads make shared resources unavailable for long periods.
+## Starvation:
+Starvation is a problem which is closely related to both, Livelock and Deadlock. In a dynamic system, requests for resources keep on happening. Thereby, some policy is needed to make a decision about who gets the resource when. This process, being reasonable, may lead to some processes never getting serviced even though they are not deadlocked. Starvation happens when “greedy” threads make shared resources unavailable for long periods.
