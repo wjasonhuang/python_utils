@@ -31,7 +31,7 @@ print(f'Total time: {round(time.time() - now, 2)} second(s)\n')
 print('----- Lock -----')
 now = time.time()
 lock = Lock()
-threads = [Thread(target=calc_lock, args=[i, sleep_time[i]]) for i in range(n)]
+threads = [Thread(target=calc_lock, args=(i, sleep_time[i])) for i in range(n)]
 for t in threads: t.start()
 for t in threads: t.join()
 print(f'Total time: {round(time.time() - now, 2)} second(s)\n')
