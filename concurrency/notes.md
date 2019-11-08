@@ -61,13 +61,15 @@ lock(p):
 ```
 Four conditions for deadlock: (all 4 conditions must hold for deadlock to occur)
 1. Mututal Exclusoin
-*  At least one held resource must be non-sharable
+    *  At least one held resource must be non-sharable
 2. Hold and Wait
-* There exists a process holding a resource and waiting for another
+    * There exists a process holding a resource and waiting for another
 3. No preemption
-* Resources cannot be preempted
+    * Resources cannot be preempted
 4. Cicular Wait
-* There exists a set of processes {P1, .., Pn}, such that P1 is waiting for P2, P2 for P3, ..., Pn for P1
+    * There exists a set of processes {P1, .., Pn}, such that P1 is waiting for P2, P2 for P3, ..., Pn for P1
+
+In computing, preemption is the act of temporarily interrupting a task being carried out by a computer system, without requiring its cooperation, and with the intention of resuming the task at a later time. Such changes of the executed task are known as context switches. It is normally carried out by a privileged task or part of the system known as a preemptive scheduler, which has the power to preempt, or interrupt, and later resume, other tasks in the system.
 
 ## Livelock:
 A livelock on the other hand is almost similar to a deadlock, except that the states of the processes involved in a livelock constantly keep on changing with regard to one another, none progressing.
