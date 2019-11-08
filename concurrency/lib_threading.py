@@ -1,8 +1,11 @@
 '''
 class threading.Thread(group=None, target=None, name=None, args=(), kwargs={}, *, daemon=None)
     start()
+    
     join(timeout=None)
+    
     is_alive()
+
 
 class threading.Lock
     acquire(blocking=True, timeout=-1)
@@ -10,6 +13,7 @@ class threading.Lock
     
     release()
     * Release a lock. This can be called from any thread, not only the thread which has acquired the lock.
+
 
 class threading.Semaphore(value=1)
     The optional argument gives the initial value for the internal counter; it defaults to 1. 
@@ -22,17 +26,29 @@ class threading.Semaphore(value=1)
     * Release a semaphore, incrementing the internal counter by one.
     * When it was zero on entry and another thread is waiting, wake up that thread.
 
+
 class threading.BoundedSemaphore(value=1)
     A bounded semaphore checks to make sure its current value doesn’t exceed its initial value.
     If it does, ValueError is raised.
 
+
 class threading.Condition(lock=None)
     acquire(*args)
+    
     release()
+    
     wait(timeout=None)
+    
     wait_for(predicate, timeout=None)
     * Wait until a condition evaluates to true.
     * predicate should be a callable which result will be interpreted as a boolean value. 
+    
+    notify(n=1)
+    * By default, wake up one thread waiting on this condition, if any.
+    
+    notify_all()
+    * Wake up all threads waiting on this condition.
+
 
 https://docs.python.org/3/library/threading.html#with-locks
 Objects that have acquire() and release() methods can be used as context managers for a with statement.
