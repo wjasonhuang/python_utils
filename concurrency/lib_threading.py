@@ -1,30 +1,25 @@
 '''
 class threading.Thread(group=None, target=None, name=None, args=(), kwargs={}, *, daemon=None)
     start()
-    
     join(timeout=None)
-    
     is_alive()
 
 
 class threading.Lock
     acquire(blocking=True, timeout=-1)
-    * Acquire a lock, blocking or non-blocking.
-    
+        * Acquire a lock, blocking or non-blocking.
     release()
-    * Release a lock. This can be called from any thread, not only the thread which has acquired the lock.
+        * Release a lock. This can be called from any thread, not only the thread which has acquired the lock.
 
 
 class threading.Semaphore(value=1)
     The optional argument gives the initial value for the internal counter; it defaults to 1. 
-
     acquire(blocking=True, timeout=None)
-    * If the internal counter is larger than zero on entry, decrement it by one.
-    * If the internal counter is zero on entry, block until awoken by a call to release().
-    
+        * If the internal counter is larger than zero on entry, decrement it by one.
+        * If the internal counter is zero on entry, block until awoken by a call to release().
     release()
-    * Release a semaphore, incrementing the internal counter by one.
-    * When it was zero on entry and another thread is waiting, wake up that thread.
+        * Release a semaphore, incrementing the internal counter by one.
+        * When it was zero on entry and another thread is waiting, wake up that thread.
 
 
 class threading.BoundedSemaphore(value=1)
@@ -34,20 +29,15 @@ class threading.BoundedSemaphore(value=1)
 
 class threading.Condition(lock=None)
     acquire(*args)
-    
     release()
-    
     wait(timeout=None)
-    
     wait_for(predicate, timeout=None)
-    * Wait until a condition evaluates to true.
-    * predicate should be a callable which result will be interpreted as a boolean value. 
-    
+        * Wait until a condition evaluates to true.
+        * predicate should be a callable which result will be interpreted as a boolean value. 
     notify(n=1)
-    * By default, wake up one thread waiting on this condition, if any.
-    
+        * By default, wake up one thread waiting on this condition, if any.
     notify_all()
-    * Wake up all threads waiting on this condition.
+        * Wake up all threads waiting on this condition.
 
 
 https://docs.python.org/3/library/threading.html#with-locks
