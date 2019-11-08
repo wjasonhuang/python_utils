@@ -51,6 +51,8 @@ https://www.geeksforgeeks.org/deadlock-starvation-and-livelock/
 
 ## Deadlock:
 A deadlock is a state in which each member of a group of actions, is waiting for some other member to release a lock.
+- All threads wait forever
+- Cannot end without external intervention
 ```
 var p = new object() 
 lock(p):
@@ -58,7 +60,11 @@ lock(p):
         // deadlock. Since p is previously locked 
         // we will never reach here... 
 ```
- 
+1) Mututal Exclusoin
+2) Hold and Wait
+3) No preemption
+4) Cicular Wait
+
 ## Livelock:
 A livelock on the other hand is almost similar to a deadlock, except that the states of the processes involved in a livelock constantly keep on changing with regard to one another, none progressing.
 ```
@@ -82,3 +88,5 @@ var l2 = .... // lock object like semaphore or mutex etc
 
 ## Starvation:
 Starvation is a problem which is closely related to both, Livelock and Deadlock. In a dynamic system, requests for resources keep on happening. Thereby, some policy is needed to make a decision about who gets the resource when. This process, being reasonable, may lead to some processes never getting serviced even though they are not deadlocked. Starvation happens when “greedy” threads make shared resources unavailable for long periods.
+- One or more threads wait indefinitely
+- Can end but does not have to
