@@ -26,6 +26,14 @@ class threading.BoundedSemaphore(value=1)
     A bounded semaphore checks to make sure its current value doesn’t exceed its initial value.
     If it does, ValueError is raised.
 
+class threading.Condition(lock=None)
+    acquire(*args)
+    release()
+    wait(timeout=None)
+    wait_for(predicate, timeout=None)
+    * Wait until a condition evaluates to true.
+    * predicate should be a callable which result will be interpreted as a boolean value. 
+
 https://docs.python.org/3/library/threading.html#with-locks
 Objects that have acquire() and release() methods can be used as context managers for a with statement.
 The acquire() method will be called when the block is entered.

@@ -29,7 +29,6 @@ The concurrency is designed to above all enable multitasking, yet it could easil
 
 
 # Lock vs Mutex vs Semaphore vs Monitor
-https://stackoverflow.com/questions/34519/what-is-a-semaphore/40238#40238
 
 ## Lock:
 - A lock allows only one thread to enter the part that's locked
