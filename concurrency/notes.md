@@ -38,10 +38,13 @@ https://stackoverflow.com/questions/34519/what-is-a-semaphore/40238#40238
 ## Mutex:
 - A mutex is the same as a lock but it can be system wide
 - Mutex is shared by multiple processes
+- Mutex is locking mechanism 
 
 ## Semaphore:
 - A semaphore does the same as a mutex but allows x number of threads to enter
 - Can be used for example to limit the number of cpu, io or ram intensive tasks running at the same time
+- Use a semaphore when you (thread) want to sleep till some other thread tells you to wake up
+- Semaphore is signaling mechanism
 
 ## Monitor:
 
@@ -84,7 +87,12 @@ Starvation is a problem which is closely related to both, Livelock and Deadlock.
 - One or more threads wait indefinitely
 - Can end but does not have to
 
-## 4 conditions for deadlock: (all 4 conditions must hold for deadlock to occur)
+
+
+# Dealing with deadlock
+
+## 4 Conditions for Deadlock:
+All 4 conditions must hold for deadlock to occur
 1. Mututal Exclusoin
     *  At least one held resource must be non-sharable
 2. Hold and Wait
@@ -96,7 +104,22 @@ Starvation is a problem which is closely related to both, Livelock and Deadlock.
 
 In computing, preemption is the act of temporarily interrupting a task being carried out by a computer system, without requiring its cooperation, and with the intention of resuming the task at a later time. Such changes of the executed task are known as context switches. It is normally carried out by a privileged task or part of the system known as a preemptive scheduler, which has the power to preempt, or interrupt, and later resume, other tasks in the system.
 
-## Dealing with deadlock:
+## Resource Allocation Graph
+A set of vertices V and a set of edges E
+* V is partitioned into two types:
+    * P = {P1, P2, …, Pn}, the set consisting of all the processes in the system
+    * R = {R1, R2, …, Rm}, the set consisting of all resource types in the system
+* E is partitioned into two types:
+    * request edge – directed edge Pi -> Rj
+    * assignment edge – directed edge Rj -> Pi
+
+Basic Facts:
+- If graph contains no cycles => no deadlock
+- If graph contians a cycle =>
+    * if only one instance per resource type => deadlock
+    * if several instances per resource type => possibility of deadlock
+
+## Deadlock Prevention
 1. Pretend deadlocks will never occur and reboot the system if a deadlock occurs
 2. Reactive
     * Periodically check for evidence of deadlock (timeouts)
@@ -108,3 +131,6 @@ In computing, preemption is the act of temporarily interrupting a task being car
     * No hold and wait, only request a resource when have none, release before requesting another (low concurrency)
     * Preempt resources (not possible if a resource cannot be saved and restored)
     * No circular wait, lock hierarchy, give all resources a ranking and must acquire highest ranking first
+
+## Deadlock Avoidance
+Banker’s Algorithm
