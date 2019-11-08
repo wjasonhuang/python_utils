@@ -47,6 +47,8 @@ https://stackoverflow.com/questions/34519/what-is-a-semaphore/40238#40238
 - Semaphore is signaling mechanism
 
 ## Monitor:
+A monitor is a synchronization construct that allows threads to have both mutual exclusion and the ability to wait (block) for a certain condition to become true.
+https://en.wikipedia.org/wiki/Monitor_(synchronization)
 
 
 
