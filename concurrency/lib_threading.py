@@ -91,6 +91,8 @@ class threading.Condition(lock=None)
     acquire(*args)
     release()
     wait(timeout=None)
+        * This method releases the underlying lock, and then blocks until it is awakened or timed out.
+        * Once awakened or timed out, it re-acquires the lock and returns.
     wait_for(predicate, timeout=None)
         * Wait until a condition evaluates to true.
         * predicate should be a callable which result will be interpreted as a boolean value. 

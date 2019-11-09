@@ -1,4 +1,5 @@
 # Threading vs Multiprocessing
+Resources needed?
 
 ## Threading:
 - A new thread is spawned within the existing process
@@ -25,6 +26,15 @@ The concurrency is designed to above all enable multitasking, yet it could easil
 - race conditions: the program ends with an undesired output, resulting from the sequence of execution among the processes. 
 - deadlocks: the concurrent processes wait for some necessary resources from each other. As a result, none of them can make progress. 
 - resource starvation: a process is perpetually denied necessary resources to progress its works.
+
+
+
+# Context Switching
+Understand how it works, how it's initiated by the operating system and underlying hardware.
+
+
+
+# Scheduling
 
 
 
