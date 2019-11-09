@@ -12,12 +12,14 @@ The release() will be called when the block is exited.
 '''
 
 
-import time
+import time, random
 from threading import Thread, Lock, Semaphore, Condition
 
 n= 9
-sleep_time = [i / 9 for i in reversed(range(n))]
-output_lock = Lock()
+sleep_times = [random.randint(1, n) / n for i in reversed(range(n))]
+lock = Lock()
+print('----- Serial -----')
+print(f'Total time: {round(sum(sleep_times), 2)} second(s)\n')
 
 
 '''
@@ -33,16 +35,16 @@ class threading.Lock
         * Release a lock. This can be called from any thread, not only the thread which has acquired the lock.
 '''
 
-def calc(t_id, sleep_time, output_lock):
-    with output_lock:
+def calc(t_id, sleep_time, lock):
+    with lock:
         print(f'Thread {t_id}: sleep {round(sleep_time, 2)} second(s)')
     time.sleep(sleep_time)
-    with output_lock:
+    with lock:
         print(f'Thread {t_id}: finished')
 
 print('----- Threading -----')
 now = time.time()
-threads = [Thread(target=calc, args=(i, sleep_time[i], output_lock)) for i in range(n)]
+threads = [Thread(target=calc, args=(i, sleep_times[i], lock)) for i in range(n)]
 for t in threads: t.start()
 for t in threads: t.join()
 print(f'Total time: {round(time.time() - now, 2)} second(s)\n')
@@ -63,11 +65,11 @@ class threading.BoundedSemaphore(value=1)
     If it does, ValueError is raised.
 '''
 
-def calc_n_times(t_id, sleep_time, output_lock, semaphore):
-    with output_lock:
+def calc_max_3_threads(t_id, sleep_time, lock, semaphore):
+    with lock:
         print(f'Thread {t_id}: sleep {round(sleep_time, 2)} second(s)')
     time.sleep(sleep_time)
-    with output_lock:
+    with lock:
         print(f'Thread {t_id}: finished')
     semaphore.release()
 
@@ -77,7 +79,7 @@ semaphore = Semaphore(3) # max 3 threads each time
 threads = []
 for i in range(n):
     semaphore.acquire()
-    t = Thread(target=calc_n_times, args=(i, sleep_time[i], output_lock, semaphore))
+    t = Thread(target=calc_max_3_threads, args=(i, sleep_times[i], lock, semaphore))
     t.start()
     threads.append(t)
 for t in threads: t.join()
@@ -97,3 +99,36 @@ class threading.Condition(lock=None)
     notify_all()
         * Wake up all threads waiting on this condition.
 '''
+
+def calc_producer_consumer(lock, cv):
+    while True:
+        cv.acquire()
+        while not thread_queue:
+            cv.wait()
+        t_id = thread_queue.pop(0)
+        cv.release()
+        with lock:
+            if not sleep_times: break
+            sleep_time = sleep_times.pop(0)
+            print(f'Thread {t_id}: sleep {round(sleep_time, 2)} second(s)')
+        time.sleep(sleep_time)
+        cv.acquire()
+        thread_queue.append(t_id)
+        cv.notify()
+        cv.release()
+        with lock:
+            print(f'Thread {t_id}: sleep finished')
+    
+    with lock:
+        print(f'Thread {t_id}: finished')
+
+print('----- Condition Variable -----')
+thread_queue, threads = [0, 1, 2], []
+now = time.time()
+cv = Condition()
+for i in range(3):
+    t = Thread(target=calc_producer_consumer, args=(lock, cv))
+    t.start()
+    threads.append(t)
+for t in threads: t.join()
+print(f'Total time: {round(time.time() - now, 2)} second(s)\n')
