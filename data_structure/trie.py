@@ -3,6 +3,7 @@ https://en.wikipedia.org/wiki/Trie
 insert/search O(L = length of string)
 '''
 
+
 class Node:
     def __init__(self):
         self.children = {}

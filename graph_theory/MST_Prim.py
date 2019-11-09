@@ -3,6 +3,7 @@ Minimum Spanning Tree Prim's Algorithm O(|E|log|V|)
 https://en.wikipedia.org/wiki/Prim%27s_algorithm
 '''
 
+
 class Heap():
     def __init__(self, n):
         self.array = []

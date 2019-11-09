@@ -4,6 +4,7 @@ if __name__ == '__main__' part is necessary
 Work in command prompt but not in IDE
 '''
 
+
 import time, os
 from multiprocessing import Process, Value, Array, Lock
 

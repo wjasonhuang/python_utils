@@ -4,6 +4,7 @@ lambda = length of loop, mu = index of first element of cycle
 https://en.wikipedia.org/wiki/Cycle_detection
 '''
 
+
 def Floyd(f, x0):
     '''
     f: function, x0: initial value

@@ -17,6 +17,7 @@ item = tuple: compare by 1st element and use rest of elements as tiebreaker
 if rest of elements don't support < operator, add an extra distinct element as tiebreaker
 '''
 
+
 import heapq
 
 help(heapq)

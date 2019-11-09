@@ -4,6 +4,7 @@ alpha(N) inverse Ackermann function ~ O(1)
 https://en.wikipedia.org/wiki/Disjoint-set_data_structure
 '''
 
+
 class UnionFindSet():
     def __init__(self, n):
         self.p = [i for i in range(n)]

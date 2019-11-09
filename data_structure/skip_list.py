@@ -4,6 +4,7 @@ search/insert/delete ~ O(log N)
 space ~ O(N)
 '''
 
+
 # Leetcode 1206
 
 import random

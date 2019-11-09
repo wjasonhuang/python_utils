@@ -25,6 +25,7 @@ printf-style String Formatting      %[flags][width][.precision]type
 https://docs.python.org/3/library/stdtypes.html#printf-style-string-formatting
 '''
 
+
 print('----------input----------')
 filename = 'input.txt'
 
@@ -50,6 +51,7 @@ with open(filename) as f:
     arr = [int(x) for x in next(f).split()]
     arr += [[int(x) for x in line.split()] for line in f]
     print(arr)
+
 
 print('----------output----------')
 print('{0}, {1}, {2}'.format('a', 'b', 'c'), '/', '{}, {}, {}'.format('a', 'b', 'c'))

@@ -7,6 +7,7 @@ set
 dict
 '''
 
+
 '''
 list.append(x) = a[len(a):] = [x]
 list.extend(iterable) = a[len(a):] = iterable
@@ -40,6 +41,7 @@ a.remove(4)
 print(a)
 a.clear()
 print(a)
+
 
 '''
 https://docs.python.org/3/library/stdtypes.html#string-methods
@@ -86,6 +88,7 @@ print('ababa'.split('b', maxsplit=1))
 print(' a\t bab\t\n a\n'.split())
 print('Alibaba'.replace('a', 'o'))
 print('hello the little'.title())
+
 
 '''
 set operations: set(), in, -, |, &, ^

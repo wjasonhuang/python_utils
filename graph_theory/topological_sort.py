@@ -4,6 +4,7 @@ https://en.wikipedia.org/wiki/Topological_sorting
 A topological ordering is possible if and only if the graph has no directed cycles
 '''
 
+
 from typing import List, Tuple
 
 '''
@@ -34,6 +35,7 @@ def topological_sort(graph: List[List[int]]) -> Tuple[bool, List[int]]:
     
     for u in range(n): dfs(u)
     return (is_possible, sorted_array if is_possible else [])
+
 
 '''
 Kahn's algorithm O(V + E), return in reverse order of DFS algorithm

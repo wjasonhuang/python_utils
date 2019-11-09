@@ -30,6 +30,7 @@ def bisect_right(a, x, lo=0, hi=None):
     return lo
 '''
 
+
 import bisect
 
 help(bisect)

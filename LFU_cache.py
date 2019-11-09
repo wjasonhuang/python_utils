@@ -5,6 +5,7 @@ https://en.wikipedia.org/wiki/Least_frequently_used
 O(1) read and write using two dimensional double linked list and hash
 '''
 
+
 # Leetcode 460
 
 class Node:

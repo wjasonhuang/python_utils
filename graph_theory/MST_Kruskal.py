@@ -3,6 +3,7 @@ Minimum Spanning Tree Kruskal's Algorithm O(|E|log|V|)
 https://en.wikipedia.org/wiki/Kruskal%27s_algorithm
 '''
 
+
 from union_find_set import UnionFindSet
 
 def MSTKruskal(n, e):
