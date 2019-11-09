@@ -123,7 +123,7 @@ def calc_producer_consumer(lock, cv):
         # a new t_id produced
         cv.acquire()
         produced.append(t_id)
-        cv.notifyAll()
+        cv.notify()
         cv.release()
         
         # exit condition
