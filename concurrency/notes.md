@@ -56,7 +56,7 @@ job queue ----->|-----> ready queue -----(scheduler)-----> CPU ----->|-----> end
 
 
 
-# Lock vs Mutex vs Semaphore vs Condition Variable vs Monitor
+# Lock vs Mutex vs Semaphore vs Monitor
 
 ## Lock:
 - A lock allows only one thread to enter the part that's locked
@@ -73,14 +73,12 @@ job queue ----->|-----> ready queue -----(scheduler)-----> CPU ----->|-----> end
 - Use a semaphore when you (thread) want to sleep till some other thread tells you to wake up
 - Semaphore is signaling mechanism
 
-## Condition Variable
-- Used to wait for a particular condition to become true (e.g. characters in buffer)
-- https://docs.python.org/2.0/lib/condition-objects.html
-
 ## Monitor:
 - A synchronization construct that allows threads to have both mutual exclusion and the ability to wait (block) for a certain condition to become true
 - Monitors also have a mechanism for signaling other threads that their condition has been met
 - A monitor consists of a mutex (lock) object and condition variables
+- https://en.wikipedia.org/wiki/Monitor_(synchronization)#Condition_variables
+- https://docs.python.org/2.0/lib/condition-objects.html
 
 
 
