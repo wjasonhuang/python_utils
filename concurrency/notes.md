@@ -21,16 +21,19 @@ Resources needed?
 
 
 
-# Concurrency 
-The concurrency is designed to above all enable multitasking, yet it could easily bring some bugs into the program if not applied properly. Depending on the consequences, the problems caused by concurrency can be categorized into three types:
-- race conditions: the program ends with an undesired output, resulting from the sequence of execution among the processes. 
-- deadlocks: the concurrent processes wait for some necessary resources from each other. As a result, none of them can make progress. 
-- resource starvation: a process is perpetually denied necessary resources to progress its works.
-
-
-
 # Context Switching
-Understand how it works, how it's initiated by the operating system and underlying hardware.
+
+## When to switch:
+- Multitasking
+    * Most commonly, within some scheduling scheme, one process must be switched out of the CPU so another process can run.
+- Interrupt handling
+    * Modern architectures are interrupt driven. This means that if the CPU requests data from a disk, for example, it does not need to busy-wait until the read is over; it can issue the request and continue with some other execution. When the read is over, the CPU can be interrupted and presented with the read.
+- User and kernel mode switching
+
+## Steps
+- The process state includes all the registers that the process may be using, especially the program counter, plus any other operating system specific data that may be necessary. This is usually stored in a data structure called a process control block (PCB) or switchframe.
+- The PCB might be stored on a per-process stack in kernel memory (as opposed to the user-mode call stack), or there may be some specific operating system defined data structure for this information. A handle to the PCB is added to a queue of processes that are ready to run, often called the ready queue.
+- Since the operating system has effectively suspended the execution of one process, it can then switch context by choosing a process from the ready queue and restoring its PCB. In doing so, the program counter from the PCB is loaded, and thus execution can continue in the chosen process.
 
 
 
@@ -59,7 +62,6 @@ Understand how it works, how it's initiated by the operating system and underlyi
 - Used to wait for a particular condition to become true (e.g. characters in buffer)
 - https://docs.python.org/2.0/lib/condition-objects.html
 
-
 ## Monitor:
 - A synchronization construct that allows threads to have both mutual exclusion and the ability to wait (block) for a certain condition to become true
 - Monitors also have a mechanism for signaling other threads that their condition has been met
@@ -67,8 +69,11 @@ Understand how it works, how it's initiated by the operating system and underlyi
 
 
 
-# Deadlock vs Livelock vs Starvation
+# Race Condition vs Deadlock vs Livelock vs Starvation
 https://www.geeksforgeeks.org/deadlock-starvation-and-livelock/
+
+## Race Condition:
+The program ends with an undesired output, resulting from the sequence of execution among the processes. 
 
 ## Deadlock:
 A deadlock is a state in which each member of a group of actions, is waiting for some other member to release a lock.
