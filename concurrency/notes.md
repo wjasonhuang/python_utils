@@ -45,12 +45,12 @@ Resources needed?
 
 
 # Scheduling
-https://youtu.be/2h3eWaPx8SA
-                |<----- partially executed swapped-out process <-----|
-                |                                                    |
-job queue ----->|-----> ready queue -----(scheduler)-----> CPU ----->|-----> end
-                |                                                    |
-                |<----- I/O <--------------- I/O waiting queue <-----|
+https://youtu.be/2h3eWaPx8SA                                                      \
+                |<----- partially executed swapped-out process <-----|            \
+                |                                                    |            \
+job queue ----->|-----> ready queue -----(scheduler)-----> CPU ----->|-----> end  \
+                |                                                    |            \
+                |<----- I/O <--------------- I/O waiting queue <-----|            \
 
 
 
