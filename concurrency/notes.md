@@ -24,11 +24,9 @@ Resources needed?
 # Context Switching
 
 ## When to switch:
-- Multitasking
-    * Most commonly, within some scheduling scheme, one process must be switched out of the CPU so another process can run.
-- Interrupt handling
-    * Modern architectures are interrupt driven. This means that if the CPU requests data from a disk, for example, it does not need to busy-wait until the read is over; it can issue the request and continue with some other execution. When the read is over, the CPU can be interrupted and presented with the read.
-- User and kernel mode switching
+- Multitasking - Most commonly, within some scheduling scheme, one process must be switched out of the CPU so another process can run.
+- Interrupt handling - Modern architectures are interrupt driven. This means that if the CPU requests data from a disk, for example, it does not need to busy-wait until the read is over; it can issue the request and continue with some other execution. When the read is over, the CPU can be interrupted and presented with the read.
+- User and kernel mode switching - A context switch may take place but isn't always necessary
 
 ## Steps
 - The process state includes all the registers that the process may be using, especially the program counter, plus any other operating system specific data that may be necessary. This is usually stored in a data structure called a process control block (PCB) or switchframe.
