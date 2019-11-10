@@ -28,14 +28,29 @@ Resources needed?
 - Interrupt handling - Modern architectures are interrupt driven. This means that if the CPU requests data from a disk, for example, it does not need to busy-wait until the read is over; it can issue the request and continue with some other execution. When the read is over, the CPU can be interrupted and presented with the read.
 - User and kernel mode switching - A context switch may take place but isn't always necessary
 
-## Steps
+## Steps:
 - The process state includes all the registers (usually consist of a small amount of fast storage) that the process may be using, especially the program counter (a processor register that indicates where a computer is in its program sequence), plus any other operating system specific data that may be necessary. This is usually stored in a data structure called a process control block (PCB) or switchframe.
 - The PCB might be stored on a per-process stack in kernel memory (as opposed to the user-mode call stack), or there may be some specific operating system defined data structure for this information. A handle to the PCB is added to a queue of processes that are ready to run, often called the ready queue.
 - Since the operating system has effectively suspended the execution of one process, it can then switch context by choosing a process from the ready queue and restoring its PCB. In doing so, the program counter from the PCB is loaded, and thus execution can continue in the chosen process.
 
+## Thread Switch vs Process Switch:
+- Both handing control over to the operating system kernel to perform the context switch.
+- The process of switching in and out of the OS kernel along with the cost of switching out the registers is the largest fixed cost of performing a context switch.
+- Both need to change the execution context (registers, stack pointers, program counters)
+
+- The virtual memory space remains the same for a thread switch, it does not during a process switch.
+- When you context switch, all of the memory addresses that the processor "remembers" in its cache effectively become useless.
+- When you change virtual memory spaces, the processor's Translation Lookaside Buffer (TLB, on CPU) or equivalent gets flushed making memory accesses much more expensive for a while. 
+
 
 
 # Scheduling
+https://youtu.be/2h3eWaPx8SA
+                |<----- partially executed swapped-out process <-----|
+                |                                                    |
+job queue ----->|-----> ready queue -----(scheduler)-----> CPU ----->|-----> end
+                |                                                    |
+                |<----- I/O <--------------- I/O waiting queue <-----|
 
 
 
