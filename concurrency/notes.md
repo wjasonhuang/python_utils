@@ -96,9 +96,8 @@ A deadlock is a state in which each member of a group of actions, is waiting for
 - Cannot end without external intervention
 ```
 lock(p):
-    lock(p):
-        // deadlock. Since p is previously locked 
-        // we will never reach here... 
+    lock(p): 
+        // since p is previously locked, we will never reach here... 
 ```
 
 ## Livelock:
