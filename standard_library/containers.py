@@ -91,7 +91,10 @@ print('hello the little'.title())
 
 
 '''
-set operations: set(), in, -, |, &, ^
+set operations: set(), in, -, |, &, ^, <, <=, >, >=
+set.add(x)
+set.remove(x)                           throw KeyError if x not in set
+set.discard(x)                          does nothing if x not in set
 '''
 
 print('----------set----------')
@@ -102,3 +105,5 @@ print(a | b)                              # letters in a or b or both
 print(a & b)                              # letters in both a and b
 print(a ^ b)                              # letters in a or b but not both
 print({x for x in 'abracadabra' if x not in 'abc'})
+a, b, c = set([1,2,3]), set([1, 2]), set([1, 2, 3])
+print(a < b, a > b, a < c, a <= c)
