@@ -4,14 +4,14 @@ Be prepared to discuss how you have used your communication and decision-making 
 # Googleyness:
 Share how you work individually and on a team, how you help others, how you navigate ambiguity, and how you push yourself to grow outside of your comfort zone.
 
-# General tips for success
+# General tips for success:
 - Listen carefully. Rephrasing questions or asking for clarity is okay, as is telling the interviewer you want time to collect your thoughts .
 - Be concise. Make sure you’re answering the question and not using a prepared example that isn’t applicable or related to the questions.
 - Think in terms of examples that will showcase your top selling points.
 - Don’t worry about giving the right answer. The interviewer will be looking to see the thought process versus the answer itself. Expect follow-up questions.
 - Come prepared with thoughtful questions (e.g., team priorities, culture, etc.). Interviewing is a two-way street, so we want you to feel comfortable and understand how a role at Google could help you grow your career.
 
-
+# Questions:
 Describe two specific goals you set for yourself and how successful you were in meeting them. What factors led to your success?
 - Your objectives—be clear on those up front.
 - Reasons you chose those particular goals.
