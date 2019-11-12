@@ -36,6 +36,7 @@ Imagine you are in charge of organizing the grand opening of a new Google office
 # Situation, Task, Action, Result
 https://www.thebalancecareers.com/what-is-the-star-interview-response-technique-2061629
 
+
 # Teamwork:
 * Active listening, Communication, Conflict Management, Delegating
 * Framing key issues, Jumping in to do additional work during times of crisis, Setting and following deadlines
@@ -48,24 +49,35 @@ https://www.thebalancecareers.com/what-is-the-star-interview-response-technique-
 Make markets for client, work as a team with sales, structuring, add value for clients
 * talk to sales to find out when is the request due
 * delegate pricing to structuring, follow-up on ETA
-* priciing aggressiveness and commission amount, discussion with sales (hit-ratio, new client, risks, clearing level)
+* priciing aggressiveness and commission amount, discussion with sales (hit-ratio/market share, risks, clearing level)
 * propose other trade ideas
 
 ## What do you do if you disagree with someone at work? 
 Disagree with sales on commission amount, build trust, explain risks/costs to hedge, propose to segregate the trade and monitor the performance
+
 
 # Common Topics:
 
 ## How Did You Handle a Challenge?
 Manager moved to a new role, step up as team leader
 * Meet with new manager and internal business partners to ensure business continuity
-* Familiarize with new responsabilities and prioritize new tasks
-* Improvement to current process and more automation, delegate current work to team members
-* Meet revenue budget
+* Went through responsibilities to be taken over, familiarize and prioritize
+* Improvement to current process, build infrastructure and more automation, delegate current work to team members
+* Meet revenue budget with one less person
 
 
+## Describe two specific goals you set for yourself and how successful you were in meeting them.
+Pull-up challenge
+* Research and come up with a plan, consistent execution over months
+* challenges along the way: plateau, progress getting slower, behind schedule
+* study proper form and diet
 
-Goal:
-Pull-up challenge (come up with a plan, challenges along the way)
+## Strength:
+* Multi-tasking, prioritize different requesuts and meet deadlines in fast paced work enviroment
+* proactive, happy to learn new things and a fast learner - take on a lot of new responsabilities as an anlyst, self-taught Python
+* Like to problem-solve (enjoy working on puzzles)
 
-Teamwork:
+## Weakness:
+* Not speak up at large meetings when I feel I have a great idea
+* Nervous, more preparation, become an expert and be more confident
+* Use every opportunity to talk to a group of people
