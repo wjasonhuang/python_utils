@@ -30,7 +30,10 @@ Imagine you are in charge of organizing the grand opening of a new Google office
 
 1. How would you handle organizing a team building event for your team?
 2. If you planned to ship a product and you did a big demo right before this shipment, but you find a crash hours before, how would you go about it?
-3. Talk about one of the hardest challenges you've had in your life? Could be software related or not.
+3. I was asked about my past leadership roles, how I meet my deadlines, how I would lead a team etc. The interviewer built up questions from my responses itself.
+4. Have you been on a situtation where a member of your team had a bad actitude or a negative actitude? How do you managed it or solve it?
+5. Does your boss have asked you something that is unreasonable? If that is the case, do you point it out when he asked that to you?, or do you wait to tell that the request is not possible?
+6. Have you ever been on a situtation in which you don't agree with the rest of your team members?, How do you solve it?
 
 
 # Situation, Task, Action, Result
@@ -49,7 +52,7 @@ https://www.thebalancecareers.com/what-is-the-star-interview-response-technique-
 Make markets for client, work as a team with sales, structuring, add value for clients
 * talk to sales to find out when is the request due
 * delegate pricing to structuring, follow-up on ETA
-* priciing aggressiveness and commission amount, discussion with sales (hit-ratio/market share, risks, clearing level)
+* pricing aggressiveness and commission amount, discussion with sales (hit-ratio/market share, risks, clearing level)
 * propose other trade ideas
 
 ## What do you do if you disagree with someone at work? 
@@ -65,6 +68,11 @@ Manager moved to a new role, step up as team leader
 * Improvement to current process, build infrastructure and more automation, delegate current work to team members
 * Meet revenue budget with one less person
 
+## Tell me about a time when you made a mistake and how you handled it.
+Running short on time and didn't excute eod delta hedge
+* immediately escalate to supervisor
+* fortunately market just closed, was able to find experts in this situation, get a quote in the market to unwind the risk
+* take away - leave enough time for process not familiar with so that can double check
 
 ## Describe two specific goals you set for yourself and how successful you were in meeting them.
 Pull-up challenge
@@ -73,11 +81,11 @@ Pull-up challenge
 * study proper form and diet
 
 ## Strength:
-* Multi-tasking, prioritize different requesuts and meet deadlines in fast paced work enviroment
-* proactive, happy to learn new things and a fast learner - take on a lot of new responsabilities as an anlyst, self-taught Python
-* Like to problem-solve (enjoy working on puzzles)
+* Multi-tasking, prioritize different requests and meet deadlines in fast paced work enviroment
+* Proactive, curious to learn new things and a fast learner
+* self-taught Python (to test theroies at work), solving problems on leetcode and opened doors for this interview
 
 ## Weakness:
 * Not speak up at large meetings when I feel I have a great idea
-* Nervous, more preparation, become an expert and be more confident
+* Nervous, more preparation, become an expert and build confidence
 * Use every opportunity to talk to a group of people
