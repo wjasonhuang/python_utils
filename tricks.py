@@ -9,6 +9,19 @@ print(idx)
 
 
 '''
+sort with comp function
+'''
+import functools
+def cmp(a, b):
+    l = (a[0] - a[1]) - (b[0] - b[1])
+    if l != 0:
+        return -l
+    else:
+        return b[0] - a[0]
+job.sort(key=functools.cmp_to_key(cmp))
+
+
+'''
 class variable vs instance variable
 '''
 
