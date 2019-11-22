@@ -11,6 +11,7 @@ print(idx)
 '''
 sort with comp function
 '''
+
 import functools
 def cmp(a, b):
     l = (a[0] - a[1]) - (b[0] - b[1])
