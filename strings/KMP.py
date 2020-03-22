@@ -15,6 +15,8 @@ def compute_lps(s: str):
 
 
 def KMP(s: str, p: str) -> int:
+    # find the first occurrence of pattern p in string s
+
     if not p: return 0
     lps, n, kp, ks = [0], len(p), 0, 0
 
