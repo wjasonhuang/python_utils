@@ -9,13 +9,6 @@
     idx = {x: i for i, x in enumerate(sorted(coords))}
     print(idx)
 
-# Sort with Comp Function
-    import functools
-    def cmp(a, b):
-        l = (a[0] - a[1]) - (b[0] - b[1])
-        return -1 if l != 0 else b[0] - a[0]
-    job.sort(key=functools.cmp_to_key(cmp))
-
 # Class Variable vs Instance Variable
     class Example:
         class_variable = 1
