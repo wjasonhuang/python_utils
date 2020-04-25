@@ -22,3 +22,6 @@
     print(a.class_variable, a.instance_variable)
     print(b.class_variable, b.instance_variable, '\n')
 
+# Raw String
+- Python raw string is created by prefixing a string literal with ‘r’ or ‘R’.
+- Python raw string treats backslash (\) as a literal character. 
