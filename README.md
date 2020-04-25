@@ -24,4 +24,4 @@
 
 # Raw String
 - Python raw string is created by prefixing a string literal with ‘r’ or ‘R’.
-- Python raw string treats backslash (\\) as a literal character. 
+- Python raw string treats backslash ( \\ ) as a literal character. 
