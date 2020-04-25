@@ -13,6 +13,8 @@ Regex Flags
 re.IGNORECASE   ignore case.
 re.MULTILINE	make begin/end {^, $} consider each line.
 re.DOTALL       make . match newline too.
+
+Use raw string r'' for patterns with \
 """
 
 import re
