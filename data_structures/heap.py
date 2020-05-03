@@ -17,15 +17,15 @@ class MinHeap:
         self.size += 1
 
     def heappop(self):  # only return when heap not empty
-        if self.size > 0:
-            self.__update()
-            self.size -= 1
-            return heapq.heappop(self.heap)
+        assert (self.size > 0)
+        self.__update()
+        self.size -= 1
+        return heapq.heappop(self.heap)
 
     def heapmin(self):
-        if self.size > 0:
-            self.__update()
-            return self.heap[0]
+        assert (self.size > 0)
+        self.__update()
+        return self.heap[0]
 
     def remove(self, val):
         self.to_remove[val] = self.to_remove.get(val, 0) + 1
