@@ -5,7 +5,7 @@ https://en.wikipedia.org/wiki/Disjoint-set_data_structure
 '''
 
 
-class UnionFindSet():
+class UnionFindSet:
     def __init__(self, n):
         self.p = [i for i in range(n)]
         self.rk = [0] * n

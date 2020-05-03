@@ -8,7 +8,7 @@ single element update and interval query O(log N)
 
 # Leetcode 307
 
-class SegTree():
+class SegTree:
     def __init__(self, nums):
         self.n = len(nums)
         self.tree = [0] * self.n + nums
@@ -46,7 +46,7 @@ key facts: modification on internval [l, r) only affects
 
 import math
 
-class SegTreeLazy():
+class SegTreeLazy:
     def __init__(self, arr):
         self.n = len(arr)
         self.h = max(math.ceil(math.log2(self.n)), 1) + 1
@@ -114,7 +114,7 @@ lazy propagation using tree instead of list (example Leetcode 699_Tree)
 def calc(a, b):
     return max(a, b)
 
-class Node():
+class Node:
     def __init__(self, lb, rb, ret=0, lazy=0):
         self.lb = lb
         self.rb = rb
@@ -132,7 +132,7 @@ class Node():
             self.right.lazy = calc(self.right.lazy, self.lazy)
         self.lazy = 0
 
-class SegmentTree():
+class SegmentTree:
     def __init__(self, arr):
         def build(lb, rb): #build [lb, rb)
             if lb >= rb: return None
