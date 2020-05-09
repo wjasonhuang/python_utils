@@ -1,12 +1,12 @@
-'''
+"""
 Floyd's cycle-finding algorithm O(lambda + mu)
 lambda = length of loop, mu = index of first element of cycle
 https://en.wikipedia.org/wiki/Cycle_detection
-'''
+"""
 
 
 def Floyd(f, x0):
-    '''
+    """
     f: function, x0: initial value
     find cycle in sequence x0, f(x0), f^2(x0), ..., f^n(x0), ...
     return mu, lambda where f^mu(x0) = f^lambda(f^mu(x0))
@@ -22,7 +22,7 @@ def Floyd(f, x0):
     => v = lambda * integer
 
     if we restart at x0, v and move by 1 each step, we will meet at mu as v + mu = mu
-    '''
+    """
 
     # find v
     slow, fast = f(x0), f(f(x0))

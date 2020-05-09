@@ -1,4 +1,4 @@
-'''
+"""
 Single-source shortest paths
     Unweighted graphs: BFS O(E + V)
     Directed graphs with non-negative weights: Dijkstra O(E + VlogV)
@@ -8,16 +8,17 @@ Single-source shortest paths
 All-pairs shortest paths
     Floyd–Warshall O(V^3)
     Johnson–Dijkstra O(EV + V^2logV)
-'''
-
+"""
 
 from typing import List, Tuple
-MAX_DIST = 10**9
+
+MAX_DIST = 10 ** 9
 
 '''
 Dijkstra's algorithm - O(V^2) or O(E + VlogV) using Fibonacci heap
 Fastest single-source shortest-path algorithm for arbitrary directed graphs with unbounded non-negative weights
 '''
+
 
 def Dijkstra(graph: List[List[int]], source) -> Tuple[List[int], List[int]]:
     '''
@@ -44,13 +45,14 @@ Bellman–Ford algorithm - O(VE)
 Capable of handling graphs in which some of the edge weights are negative numbers
 '''
 
+
 def Bellman_Ford(edges: List[List[int]], n_vertices, source) -> Tuple[bool, List[int], List[int]]:
     '''
         vertices: 0, 1, ..., n_vertices - 1
         edges: list of edges in format (u, v, c), u -> v with cost c
         return (False, None, None) if negative cycle exists, else (True, distances, paths)
     '''
-    
+
     dist, prev = [MAX_DIST] * n_vertices, [-1] * n_vertices
     dist[source] = 0
     for _ in range(n_vertices - 1):
@@ -68,11 +70,12 @@ Floyd–Warshall O(V^3)
 Find shortest distances between every pair of vertices
 '''
 
+
 def Floyd_Warshall(graph: List[List[int]]) -> List[List[int]]:
     '''
         graph[u][v]: cost u -> v
     '''
-    
+
     n = len(graph)
     dist = [graph[i][:] for i in range(n)]
     for k in range(n):
@@ -92,8 +95,6 @@ Johnson–Dijkstra O(EV + V^2logV)
 5) All negative weights become non-negative, because h is the shortest distance h[v] <= h[u] + w(u, v)
 6) Remove s and run Dijkstra's algorithm for every vertex 
 '''
-
-
 
 '''
 #LeetCode 743

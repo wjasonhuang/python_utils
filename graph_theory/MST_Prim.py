@@ -1,7 +1,7 @@
-'''
+"""
 Minimum Spanning Tree Prim's Algorithm O(|E|log|V|)
 https://en.wikipedia.org/wiki/Prim%27s_algorithm
-'''
+"""
 
 
 class Heap():
@@ -10,20 +10,20 @@ class Heap():
         self.size = -1
         self.pos = [-1] * n
         self.inf = 99999999
-    
+
     def swap(self, pos1, pos2):
         self.array[pos1], self.array[pos2] = (self.array[pos2], self.array[pos1])
         self.pos[self.array[pos1][1]] = pos1
         self.pos[self.array[pos2][1]] = pos2
-    
+
     def ascend(self, pos):
         if pos > self.size: return
-        
+
         left = pos * 2 + 1
         lv = self.inf if left > self.size else self.array[left][0]
         right = pos * 2 + 2
         rv = self.inf if right > self.size else self.array[right][0]
-        
+
         if self.array[pos][0] <= lv and self.array[pos][0] <= rv: return
         if lv < rv:
             self.swap(pos, left)
@@ -31,20 +31,20 @@ class Heap():
         else:
             self.swap(pos, right)
             self.ascend(right)
-        
+
     def descend(self, pos):
         if pos <= 0: return
         parent = (pos - 1) // 2
         if self.array[pos][0] < self.array[parent][0]:
             self.swap(pos, parent)
             self.descend(parent)
-    
+
     def push(self, c, v):
         self.array.append((c, v))
         self.size += 1
         self.pos[v] = self.size
         self.descend(self.size)
-    
+
     def pop(self):
         if self.size < 0: return
         temp = self.array[0]
@@ -63,6 +63,7 @@ class Heap():
             self.ascend(self.pos[v])
             self.descend(self.pos[v])
 
+
 def MSTPrim(n, edges):
     # vertex: 0..n-1, e: list of [v1, v2, c] edge between v1 and v2 at cost c
 
@@ -75,7 +76,7 @@ def MSTPrim(n, edges):
     minHeap.push(0, 0)
     nodes = [True] * n
     MST = 0
-    
+
     while minHeap.size >= 0:
         c, v = minHeap.pop()
         nodes[v] = False
