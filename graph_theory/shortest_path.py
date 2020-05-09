@@ -21,9 +21,9 @@ Fastest single-source shortest-path algorithm for arbitrary directed graphs with
 
 
 def Dijkstra(graph: List[List[int]], source) -> Tuple[List[int], List[int]]:
-    '''
-        graph: directed graph, graph[u] = [(v, c) where u -> v with cost c]
-    '''
+    """
+    graph: directed graph, graph[u] = [(v, c) where u -> v with cost c]
+    """
 
     n = len(graph)
     dist, prev, queue = [MAX_DIST] * n, [-1] * n, set(range(n))
@@ -47,11 +47,11 @@ Capable of handling graphs in which some of the edge weights are negative number
 
 
 def Bellman_Ford(edges: List[List[int]], n_vertices, source) -> Tuple[bool, List[int], List[int]]:
-    '''
-        vertices: 0, 1, ..., n_vertices - 1
-        edges: list of edges in format (u, v, c), u -> v with cost c
-        return (False, None, None) if negative cycle exists, else (True, distances, paths)
-    '''
+    """
+    vertices: 0, 1, ..., n_vertices - 1
+    edges: list of edges in format (u, v, c), u -> v with cost c
+    return (False, None, None) if negative cycle exists, else (True, distances, paths)
+    """
 
     dist, prev = [MAX_DIST] * n_vertices, [-1] * n_vertices
     dist[source] = 0
@@ -61,8 +61,8 @@ def Bellman_Ford(edges: List[List[int]], n_vertices, source) -> Tuple[bool, List
                 dist[v] = dist[u] + c
                 prev[v] = u
     for u, v, c in edges:
-        if dist[v] > dist[u] + c: return (False, None, None)
-    return (True, dist, prev)
+        if dist[v] > dist[u] + c: return False, [], []
+    return True, dist, prev
 
 
 '''
@@ -72,9 +72,9 @@ Find shortest distances between every pair of vertices
 
 
 def Floyd_Warshall(graph: List[List[int]]) -> List[List[int]]:
-    '''
-        graph[u][v]: cost u -> v
-    '''
+    """
+    graph[u][v]: cost u -> v
+    """
 
     n = len(graph)
     dist = [graph[i][:] for i in range(n)]
@@ -95,6 +95,8 @@ Johnson–Dijkstra O(EV + V^2logV)
 5) All negative weights become non-negative, because h is the shortest distance h[v] <= h[u] + w(u, v)
 6) Remove s and run Dijkstra's algorithm for every vertex 
 '''
+
+# To implement
 
 '''
 #LeetCode 743
