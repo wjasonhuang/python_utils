@@ -4,6 +4,8 @@ https://en.wikipedia.org/wiki/Topological_sorting
 A topological ordering is possible if and only if the graph has no directed cycles
 A topological ordering of a directed graph is a linear ordering of its vertices such that
     for every directed edge uv from vertex u to vertex v, u comes before v in the ordering
+
+Leetcode 1203
 """
 
 from typing import List, Tuple
@@ -11,10 +13,10 @@ from typing import List, Tuple
 
 def topological_sort(graph: List[List[int]]) -> Tuple[bool, List[int]]:
     """
-        DFS algorithm O(V + E)
-        graph: directed graph, graph[u] = [v where u -> v]
-        [[1, 2], [2], []] => (True, [0, 1, 2])
-        visited[u]: 0 not visited, 1 visiting, 2 visited
+    DFS algorithm O(V + E)
+    graph: directed graph, graph[u] = [v where u -> v]
+    [[1, 2], [2], []] => (True, [0, 1, 2])
+    visited[u]: 0 not visited, 1 visiting, 2 visited
     """
 
     n, is_possible = len(graph), True
@@ -40,9 +42,9 @@ def topological_sort(graph: List[List[int]]) -> Tuple[bool, List[int]]:
 
 def Kahn(graph: List[List[int]]) -> Tuple[bool, List[int]]:
     """
-        Kahn's algorithm O(V + E)
-        graph: directed graph, graph[u] = [v where u -> v]
-        [[1, 2], [2], []] => (True, [0, 1, 2])
+    Kahn's algorithm O(V + E)
+    graph: directed graph, graph[u] = [v where u -> v]
+    [[1, 2], [2], []] => (True, [0, 1, 2])
     """
 
     n, idx = len(graph), 0

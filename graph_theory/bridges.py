@@ -14,28 +14,30 @@ https://cp-algorithms.com/graph/bridge-searching.html
 Leetcode 1192
 """
 
-def criticalConnections(self, n, edges):
-    g = dict()
-    for i in range(n): g[i] = []
-    for e in edges:
-        g[e[0]].append(e[1])
-        g[e[1]].append(e[0])
-    ret = []
-    disc = [0] * n
-    low = [0] * n
-    visited = [False] * n
-    self.time = 0
+from typing import List, Tuple
 
-    def dfs(u, p):
+
+def bridges(graph: List[List[int]]) -> List[Tuple[int, int]]:
+    """
+    graph: directed graph, graph[u] = [v where u -> v]
+    """
+    n, time = len(graph), 0
+    disc, low = [0] * n, [0] * n
+    visited = [False] * n
+    ret = []
+
+    def dfs(u, parent):
+        nonlocal time
+
         visited[u] = True
-        disc[u] = low[u] = self.time
-        self.time += 1
-        for v in g[u]:
+        disc[u] = low[u] = time
+        time += 1
+        for v in graph[u]:
             if not visited[v]:
                 dfs(v, u)
                 low[u] = min(low[u], low[v])
                 if low[v] > disc[u]: ret.append([u, v])
-            elif v != p:
+            elif v != parent:
                 low[u] = min(low[u], low[v])
 
     for i in range(n):
