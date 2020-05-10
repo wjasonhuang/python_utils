@@ -9,10 +9,15 @@ fractions.Fraction(string)
 
 numerator                                       numerator of the Fraction in lowest term
 denominator                                     denominator of the Fraction in lowest term
-as_integer_ratio()                              return a tuple of two integers with a positive denominator
-from_float(flt)
-from_decimal(dec)
 limit_denominator(max_denominator=1000000)      returns the closest Fraction with denominator at most max_denominator
+
+fraction is saved with lowest positive denominator
 """
 
-import fractions
+from fractions import Fraction
+
+a = Fraction(10, -6)
+b = Fraction("1.35")
+print(a, b, a + b, a * b)
+print(a.numerator, a.denominator)
+print(Fraction(3.1415926).limit_denominator(20))
