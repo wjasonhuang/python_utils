@@ -14,14 +14,14 @@ SPOJ CAPCITY
 from typing import List
 
 
-def Kosaraju(graph: List[List[int]]) -> List[int]:
+def Kosaraju(g: List[List[int]]) -> List[int]:
     """
     Kosaraju's algorithm O(V + E)
-    graph: directed graph, graph[u] = [v where u -> v]
+    g: directed graph, graph[u] = [v where u -> v]
     return the number of scc and the partition of vertices
     """
 
-    n = len(graph)
+    n = len(g)
     order, visited = [], [False] * n
     for u in range(n):
         if visited[u]: continue
@@ -29,9 +29,9 @@ def Kosaraju(graph: List[List[int]]) -> List[int]:
         stack = [(u, 0)]
         while stack:  # use stack instead of dfs to avoid stack overflow from deep recursion
             cur, iter = stack.pop()
-            if iter < len(graph[cur]):
+            if iter < len(g[cur]):
                 stack.append((cur, iter + 1))
-                v = graph[cur][iter]
+                v = g[cur][iter]
                 if not visited[v]:
                     visited[v] = True
                     stack.append((v, 0))
@@ -39,7 +39,7 @@ def Kosaraju(graph: List[List[int]]) -> List[int]:
                 order.append(cur)
     gt = [[] for _ in range(n)]  # transpose of graph
     for u in range(n):
-        for v in graph[u]:
+        for v in g[u]:
             gt[v].append(u)
     scc, cnt = [-1] * n, 0
     for u in reversed(order):
