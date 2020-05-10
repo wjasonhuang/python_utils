@@ -21,6 +21,7 @@ def bridges(graph: List[List[int]]) -> List[Tuple[int, int]]:
     """
     graph: directed graph, graph[u] = [v where u -> v]
     """
+
     n, time = len(graph), 0
     disc, low = [0] * n, [0] * n
     visited = [False] * n
