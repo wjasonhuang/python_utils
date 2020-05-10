@@ -36,7 +36,7 @@ def topological_sort(graph: List[List[int]]) -> Tuple[bool, List[int]]:
         sorted_array.append(u)
 
     for i in range(n): dfs(i)
-    return is_possible, (reversed(sorted_array) if is_possible else [])
+    return is_possible, reversed(sorted_array) if is_possible else []
 
 
 def Kahn(graph: List[List[int]]) -> Tuple[bool, List[int]]:
