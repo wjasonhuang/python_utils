@@ -18,6 +18,6 @@ from fractions import Fraction
 
 a = Fraction(10, -6)
 b = Fraction("1.35")
-print(a, b, a + b, a * b)
-print(a.numerator, a.denominator)
+print(a, b, a.numerator, a.denominator)
+print(a + b, a * b, a > b, min(a, b), max(a, b))
 print(Fraction(3.1415926).limit_denominator(20))
