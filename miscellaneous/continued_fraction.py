@@ -9,6 +9,8 @@ z_func(x, y)                z(x,y) in https://en.wikipedia.org/wiki/Continued_fr
 between(n1, d1, n2, d2)     returns smallest d such that n1 / d1 < n / d < n2 / d2
 """
 
+from itertools import zip_longest
+
 
 def encode(n, d):
     a = []
@@ -28,14 +30,11 @@ def decode(a):
 
 def z_func(x, y):
     assert x != y
-    lx, ly = len(x), len(y)
-    for i in range(max(lx, ly)):
-        ax = x[i] if i < lx else y[i] + 1
-        ay = y[i] if i < ly else x[i] + 1
+    for i, (ax, ay) in enumerate(zip_longest(x, y, fillvalue=float('inf'))):
         if ax != ay: return x[:i] + [min(ax, ay) + 1]
 
 
-def between(n1, d1, n2, d2):
+def between(n1, d1, n2, d2):  # find smallest d such that n1 / d1 < n / d < n2 / d2
     assert n1 * d2 < n2 * d1
     x1, y1 = encode(n1, d1), encode(n2, d2)
     x2, y2 = x1[:-1] + [x1[-1] - 1, 1], y1[:-1] + [y1[-1] - 1, 1]
