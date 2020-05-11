@@ -12,7 +12,6 @@ denominator                                     denominator of the Fraction in l
 limit_denominator(max_denominator=1000000)      returns the closest Fraction with denominator at most max_denominator
 
 fraction is saved with lowest positive denominator
-algorithm for limit_denominator: https://en.wikipedia.org/wiki/Continued_fraction#Best_rational_within_an_interval
 """
 
 from fractions import Fraction
