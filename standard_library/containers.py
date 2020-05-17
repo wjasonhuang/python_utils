@@ -92,6 +92,9 @@ set operations: set(), in, -, |, &, ^, <, <=, >, >=
 set.add(x)
 set.remove(x)                           throw KeyError if x not in set
 set.discard(x)                          does nothing if x not in set
+set.issubset(x) or <=                   true if the set is a subset of x
+set.issuperset(x) or >=                 true if the set is a superset of x
+set.isdisjoint(x)                       true if the set has no elements in common with x
 '''
 
 print('----------set----------')
@@ -102,5 +105,6 @@ print(a | b)  # letters in a or b or both
 print(a & b)  # letters in both a and b
 print(a ^ b)  # letters in a or b but not both
 print({x for x in 'abracadabra' if x not in 'abc'})
-a, b, c = set([1, 2, 3]), set([1, 2]), set([1, 2, 3])
-print(a < b, a > b, a < c, a <= c)
+a, b, c, d = set([1, 2, 3]), set([1, 2]), set([1, 2, 3]), set([4, 5])
+print(a < b, a > b, a < c, a <= c, a < d, a >= d)
+print(a.issuperset(c), b.issubset(a), d.isdisjoint(a))
