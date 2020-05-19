@@ -1,5 +1,4 @@
 # Threading vs Multiprocessing
-Resources needed?
 
 ## Threading:
 - A new thread is spawned within the existing process
@@ -18,7 +17,6 @@ Resources needed?
 - One GIL (Global Interpreter Lock) for each process
 - Utilize multiple CPU cores
 - Use for programs that are CPU bound
-
 
 
 # Context Switching
@@ -43,7 +41,6 @@ Resources needed?
 - When you change virtual memory spaces, the processor's Translation Lookaside Buffer (TLB, on CPU) or equivalent gets flushed making memory accesses much more expensive for a while. 
 
 
-
 # Scheduling
 https://youtu.be/2h3eWaPx8SA
 ```
@@ -53,7 +50,6 @@ job queue ----->|-----> ready queue -----(scheduler)-----> CPU ----->|-----> end
                 |                                                    |
                 |<----- I/O <--------------- I/O waiting queue <-----|
 ```
-
 
 
 # Lock vs Mutex vs Semaphore vs Monitor
@@ -79,7 +75,6 @@ job queue ----->|-----> ready queue -----(scheduler)-----> CPU ----->|-----> end
 - A monitor consists of a mutex (lock) object and condition variables
 - https://en.wikipedia.org/wiki/Monitor_(synchronization)#Condition_variables
 - https://docs.python.org/2.0/lib/condition-objects.html
-
 
 
 # Race Condition vs Deadlock vs Livelock vs Starvation
@@ -120,7 +115,6 @@ A livelock on the other hand is almost similar to a deadlock, except that the st
 Starvation is a problem which is closely related to both, Livelock and Deadlock. In a dynamic system, requests for resources keep on happening. Thereby, some policy is needed to make a decision about who gets the resource when. This process, being reasonable, may lead to some processes never getting serviced even though they are not deadlocked. Starvation happens when “greedy” threads make shared resources unavailable for long periods.
 - One or more threads wait indefinitely
 - Can end but does not have to
-
 
 
 # Dealing with deadlock
