@@ -28,9 +28,7 @@ class LRUCache:
             del self.cache[key]
             self.cache[key] = value
         else:
-            if len(self.cache) >= self.cap:
-                head = next(iter(self.cache))
-                del self.cache[head]
+            if len(self.cache) >= self.cap: del self.cache[next(iter(self.cache))]
             self.cache[key] = value
 
 

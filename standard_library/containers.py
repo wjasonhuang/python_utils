@@ -42,6 +42,7 @@ a.clear()
 print(a)
 
 '''
+https://docs.python.org/3/library/string.html
 https://docs.python.org/3/library/stdtypes.html#string-methods
 str.capitalize()                        return a string with first character capitlaized
 str.title()                             return a string with words start with an uppercase character
