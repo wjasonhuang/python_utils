@@ -1,6 +1,8 @@
 '''
+https://docs.python.org/3/library/queue.html
+
 class queue.Queue(maxsize=0)            constructor for a FIFO queue
-class queue.LifoQueue(maxsize=0)        constructor for a FIFO queue
+class queue.LifoQueue(maxsize=0)        constructor for a LIFO queue
 class queue.PriorityQueue(maxsize=0)    data format: (priority_number, data)
 
 Queue.qsize()
