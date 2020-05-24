@@ -1,3 +1,6 @@
+"""
+https://docs.python.org/3/tutorial/classes.html
+"""
 
 ### Class Variable vs Instance Variable
     class Example:
