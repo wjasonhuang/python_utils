@@ -1,5 +1,5 @@
 '''
-Heap with remove operation via heapq + dict
+Heap with remove by value operation via heapq + dict
 '''
 
 import heapq
