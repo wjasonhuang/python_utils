@@ -6,7 +6,7 @@ import heapq
 
 
 class MinHeap:
-    def __init__(self, heap=[]):
+    def __init__(self, heap):
         self.heap = heap
         self.size = len(heap)
         heapq.heapify(self.heap)
