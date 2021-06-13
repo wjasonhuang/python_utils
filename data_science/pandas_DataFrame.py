@@ -3,6 +3,8 @@ https://pandas.pydata.org/docs/index.html
 
 Series.unique()               Return unique values of Series object
 Series.nunique(dropna=True)   Return number of unique elements in the object
+Series.apply(func, convert_dtype=True, args=(), **kwds)
+    -> Invoke function on values of Series
 
 DataFrame.index               The index (row labels) of the DataFrame
 DataFrame.columns             The column labels of the DataFrame
@@ -17,26 +19,26 @@ DataFrame.value_counts()      Return a Series containing counts of unique rows i
 
 ----- Data Cleaning -----
 DataFrame.drop_duplicates(subset=None, keep='first', inplace=False, ignore_index=False)
-  -> Return DataFrame with duplicate rows removed
+    -> Return DataFrame with duplicate rows removed
 DataFrame.dropna(axis=0, how='any', thresh=None, subset=None, inplace=False)
-  -> Remove missing values
+    -> Remove missing values
 DataFrame.fillna(value=None, method=None, axis=None, inplace=False, limit=None, downcast=None)
-  -> Fill NA/NaN values using the specified method
+    -> Fill NA/NaN values using the specified method
 DataFrame.drop(labels=None, axis=0, index=None, columns=None, level=None, inplace=False, errors='raise')
-  -> Drop specified labels from rows or columns
+    -> Drop specified labels from rows or columns
 pandas.to_numeric(arg, errors='raise', downcast=None)
-  -> Convert argument to a numeric type
-  -> dtypedata type, or dict of column name -> data type
+    -> Convert argument to a numeric type
+    -> dtypedata type, or dict of column name -> data type
 DataFrame.astype(dtype, copy=True, errors='raise')
-  -> Cast a pandas object to a specified dtype dtype.
+    -> Cast a pandas object to a specified dtype dtype.
 
 ----- Data Manipulation -----
 DataFrame.nunique(axis=0, dropna=True)
-  -> Count distinct observations over requested axis
+    -> Count distinct observations over requested axis
 DataFrame.merge(right, how='inner', on=None, left_on=None, right_on=None, left_index=False, right_index=False, sort=False, suffixes=('_x', '_y'), copy=True, indicator=False, validate=None)
-  -> Merge DataFrame or named Series objects with a database-style join
+    -> Merge DataFrame or named Series objects with a database-style join
 pandas.merge(left, right, how='inner', on=None, left_on=None, right_on=None, left_index=False, right_index=False, sort=False, suffixes=('_x', '_y'), copy=True, indicator=False, validate=None)
-  -> Merge DataFrame or named Series objects with a database-style join
+    -> Merge DataFrame or named Series objects with a database-style join
 
 """
 
