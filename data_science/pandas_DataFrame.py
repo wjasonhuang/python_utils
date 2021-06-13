@@ -1,6 +1,7 @@
 """
 https://pandas.pydata.org/docs/reference/frame.html
 
+
 DataFrame.index         The index (row labels) of the DataFrame
 DataFrame.columns       The column labels of the DataFrame
 DataFrame.dtypes        Return the dtypes in the DataFrame
@@ -10,6 +11,7 @@ DataFrame.ndim          Return dimensions, 1 for array, 2 for matrix
 DataFrame.size          len(index) * len(columns)
 DataFrame.shape         Return a tuple representing the dimensionality of the DataFrame
 DataFrame.empty         Indicator whether DataFrame is empty
+
 
 DataFrame.value_counts()
   -> Return a Series containing counts of unique rows in the DataFrame
@@ -36,7 +38,7 @@ pandas.to_numeric(arg, errors='raise', downcast=None)
 
 pandas.merge(left, right, how='inner', on=None, left_on=None, right_on=None, left_index=False, right_index=False, sort=False, suffixes=('_x', '_y'), copy=True, indicator=False, validate=None)
   -> Merge DataFrame or named Series objects with a database-style join
-  
+
 """
 
 import pandas as pd
