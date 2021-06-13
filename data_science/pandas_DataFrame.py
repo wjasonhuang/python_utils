@@ -27,7 +27,10 @@ DataFrame.dropna(axis=0, how='any', thresh=None, subset=None, inplace=False)
 
 DataFrame.fillna(value=None, method=None, axis=None, inplace=False, limit=None, downcast=None)
   -> Fill NA/NaN values using the specified method
-  
+
+DataFrame.drop(labels=None, axis=0, index=None, columns=None, level=None, inplace=False, errors='raise')
+  -> Drop specified labels from rows or columns
+
 DataFrame.merge(right, how='inner', on=None, left_on=None, right_on=None, left_index=False, right_index=False, sort=False, suffixes=('_x', '_y'), copy=True, indicator=False, validate=None)
   -> Merge DataFrame or named Series objects with a database-style join
 
