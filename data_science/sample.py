@@ -4,3 +4,6 @@ with open('albumlist.csv', 'r') as csvfile:
     print(reader.fieldnames)
     albums = [row for row in reader]
     
+import pandas as pd
+xls = pd.ExcelFile('yelp.xlsx')
+df = xls.parse('yelp_data')
