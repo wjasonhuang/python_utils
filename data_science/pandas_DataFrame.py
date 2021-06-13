@@ -11,6 +11,7 @@ DataFrame.size          len(index) * len(columns)
 DataFrame.shape         Return a tuple representing the dimensionality of the DataFrame
 DataFrame.empty         Indicator whether DataFrame is empty
 
+DataFrame.value_counts()      Return a Series containing counts of unique rows in the DataFrame
 """
 
 import pandas as pd
