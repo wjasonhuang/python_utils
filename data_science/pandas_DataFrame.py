@@ -13,8 +13,30 @@ DataFrame.empty         Indicator whether DataFrame is empty
 
 DataFrame.value_counts()
   -> Return a Series containing counts of unique rows in the DataFrame
+
 DataFrame.drop_duplicates(subset=None, keep='first', inplace=False, ignore_index=False)
   -> Return DataFrame with duplicate rows removed
+
+DataFrame.astype(dtype, copy=True, errors='raise')
+  -> Cast a pandas object to a specified dtype dtype.
+
+DataFrame.dropna(axis=0, how='any', thresh=None, subset=None, inplace=False)
+  -> Remove missing values
+
+DataFrame.fillna(value=None, method=None, axis=None, inplace=False, limit=None, downcast=None)
+  -> Fill NA/NaN values using the specified method
+  
+DataFrame.merge(right, how='inner', on=None, left_on=None, right_on=None, left_index=False, right_index=False, sort=False, suffixes=('_x', '_y'), copy=True, indicator=False, validate=None)
+  -> Merge DataFrame or named Series objects with a database-style join
+
+
+pandas.to_numeric(arg, errors='raise', downcast=None)
+  -> Convert argument to a numeric type
+  -> dtypedata type, or dict of column name -> data type
+
+pandas.merge(left, right, how='inner', on=None, left_on=None, right_on=None, left_index=False, right_index=False, sort=False, suffixes=('_x', '_y'), copy=True, indicator=False, validate=None)
+  -> Merge DataFrame or named Series objects with a database-style join
+  
 """
 
 import pandas as pd
@@ -29,3 +51,6 @@ df.at['x', 'a'] = 41
 df.loc['y']['b'] = 42
 df.iloc[1][2] = 43
 print(df)
+
+df['description'] = df['description'].str.replace('$', '')
+
