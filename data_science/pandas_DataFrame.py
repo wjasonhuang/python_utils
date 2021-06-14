@@ -26,12 +26,12 @@ DataFrame.fillna(value=None, method=None, axis=None, inplace=False, limit=None, 
     -> Fill NA/NaN values using the specified method
 DataFrame.drop(labels=None, axis=0, index=None, columns=None, level=None, inplace=False, errors='raise')
     -> Drop specified labels from rows or columns
+DataFrame.astype(dtype, copy=True, errors='raise')
+    -> Cast a pandas object to a specified dtype dtype.
 pandas.to_numeric(arg, errors='raise', downcast=None)
     -> Convert argument to a numeric type
     -> dtypedata type, or dict of column name -> data type
-DataFrame.astype(dtype, copy=True, errors='raise')
-    -> Cast a pandas object to a specified dtype dtype.
-
+    
 ----- Data Manipulation -----
 DataFrame.nunique(axis=0, dropna=True)
     -> Count distinct observations over requested axis
