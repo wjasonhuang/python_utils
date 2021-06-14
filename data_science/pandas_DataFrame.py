@@ -39,6 +39,9 @@ DataFrame.merge(right, how='inner', on=None, left_on=None, right_on=None, left_i
     -> Merge DataFrame or named Series objects with a database-style join
 pandas.merge(left, right, how='inner', on=None, left_on=None, right_on=None, left_index=False, right_index=False, sort=False, suffixes=('_x', '_y'), copy=True, indicator=False, validate=None)
     -> Merge DataFrame or named Series objects with a database-style join
+pandas.pivot_table(data, values=None, index=None, columns=None, aggfunc='mean', fill_value=None, margins=False, dropna=True, margins_name='All', observed=False)
+    -> Create a spreadsheet-style pivot table as a DataFrame
+    -> aggfuncfunction, list of functions, dict, default numpy.mean
 
 """
 
