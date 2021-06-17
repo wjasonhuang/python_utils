@@ -79,3 +79,29 @@ plt.legend(loc = 'upper left')
 axes = plt.gca() # gca = get current axes
 axes.set_yscale('log')
 plt.show()
+
+'---------- Bar Charts ----------'
+plt.bar(
+    data_for_x_axis,
+    data_for_y_axis,
+    #other optional parameters
+)
+
+#count the records for each city and get a new DataFrame
+df_city_value_counts = df['city'].value_counts()
+#call the plot method and set the kind parameter to ‘bar’
+df_city_value_counts.plot(kind='bar', figsize=(12, 6), fontsize=12, legend=False, title="Number of Businesses Per City")
+plt.ylabel("Number of businesses")
+plt.show()
+
+bar_rest = df["category_0"].isin(["Bars", "Restaurants"])
+df_bar_rest = df[bar_rest]
+#pivot along category
+pivot_state_cat = pd.pivot_table(df_bar_rest, index=["category_0"])
+#filter the df_bar_rest DataFrame columns pivot_state_cat = pivot_state_cat[["stars"]]
+pivot_state_cat = pivot_state_cat[["stars"]]
+#call the plot method and set the kind parameter to ‘bar’
+pivot_state_cat.plot(kind='bar', figsize=(12, 6), fontsize=12, legend=False, title="Average Star Rating for Bars & Restaurants")
+plt.xlabel("Category")
+plt.ylabel("Average star rating")
+plt.show()
