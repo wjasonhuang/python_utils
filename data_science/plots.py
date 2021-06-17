@@ -1,5 +1,3 @@
-
-'---------- Plot ----------'
 %pylab inline
 import matplotlib.pyplot as plt
 
