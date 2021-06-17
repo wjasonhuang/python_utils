@@ -60,3 +60,15 @@ print(df)
 
 df['description'] = df['description'].str.replace('$', '')
 
+----- grouby & aggregate -----
+df = pd.DataFrame(
+    {
+        "A": [1, 1, 2, 2, 2],
+        "B": [1, 2, 3, 5, 10],
+        "C": [0.362838, 0.227877, 1.267767, -0.562860, 0],
+    }
+)
+df.groupby('A').agg({'B': ['min', 'max'], 'C': 'sum'})
+grouped = df.groupby('A')
+grouped["B"].agg([lambda x: x.max() - x.min(), lambda x: x.median() - x.mean()])
+df.groupby('A').agg(get_min=pd.NamedAgg(column="B", aggfunc="min"), median_mean=pd.NamedAgg(column="B", aggfunc=lambda x: x.median() - x.mean()))
