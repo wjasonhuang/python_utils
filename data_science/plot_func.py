@@ -1,3 +1,8 @@
+"""
+https://matplotlib.org/
+https://seaborn.pydata.org/
+"""
+
 %pylab inline
 import matplotlib.pyplot as plt
 
