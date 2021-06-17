@@ -60,7 +60,7 @@ print(df)
 
 df['description'] = df['description'].str.replace('$', '')
 
------ grouby & aggregate -----
+'----- grouby & aggregate -----'
 df = pd.DataFrame(
     {
         "A": [1, 1, 2, 2, 2],
