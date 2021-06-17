@@ -10,11 +10,11 @@ xls = pd.ExcelFile('yelp.xlsx')
 df = xls.parse('yelp_data')
 
 
-# ----------- Plot ----------
+'---------- Plot ----------'
 %pylab inline
 import matplotlib.pyplot as plt
 
-# ----------- Histograms ----------
+'---------- Histograms ----------'
 plt.hist(
     pitt_stars,
     alpha = 0.3,
@@ -48,7 +48,7 @@ plt.legend(loc = 'best')
 plt.title('Review distribution of Pittsburgh and Las Vegas')
 plt.show()
 
-# ----------- Scatterplots ----------
+'---------- Scatterplots ----------'
 plt.scatter(
     df_health["stars"], df_health["review_count"],
     marker = "o",
